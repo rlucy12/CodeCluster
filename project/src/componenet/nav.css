@@ -1,0 +1,129 @@
+/* General reset */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling for the navigation bar */
+.navbar {
+    background-color:white;
+    color:grey;
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow items to wrap on smaller screens */
+    justify-content: space-between;
+    /* Align items to both ends */
+    align-items: center;
+    padding: 10px;
+    /* Add some padding for spacing */
+    /* border: 2px solid gray; */
+    margin: 10px;
+}
+
+.subnavbar {
+    background-color:grey;
+    color:white;
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow items to wrap on smaller screens */
+    justify-content: space-between;
+    /* Align items to both ends */
+    align-items: center;
+    padding: 10px;
+    /* Add some padding for spacing */
+    /* border: 2px solid gray; */
+    margin: 10px;
+}
+/* Logo styling */
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    /* Add spacing at the bottom */
+    text-align: center;
+    margin-left: 155px;
+    /* Center the logo */
+}
+
+/* Search bar styling */
+.search-bar {
+    flex: 1;
+    margin-left: 45px;
+    /* Adjust margin for spacing */
+    padding: 15px ;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 400px;
+    /* Limit the width for smaller screens */
+}
+
+/* Navigation links styling */
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 100px;
+}
+
+.nav-links li {
+    margin-right: 100px;
+    /* Adjust margin for spacing */
+    margin-bottom: 5px;
+    /* Add spacing between links */
+}
+
+.nav-links a {
+    color:purple;
+    text-decoration: none;
+}
+
+
+.subnav-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 400px;
+    margin-top: 15px;
+    margin-right: 300px;
+    color: white;
+}
+
+.subnav-links li {
+    margin-right: 100px;
+    /* Adjust margin for spacing */
+    margin-bottom: 5px;
+    /* Add spacing between links */
+}
+
+.subnav-links a {
+    color: white;
+    text-decoration: none;
+}
+/* Icons styling */
+.icon {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .nav-links li {
+        margin-right: 20px;
+        /* Adjust margin for spacing */
+    }
+
+    .search-bar {
+        flex: none;
+        /* Reset flex value */
+        max-width: none;
+        /* Reset max-width */
+    }
+}
