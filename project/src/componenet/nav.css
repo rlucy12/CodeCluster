@@ -69,11 +69,11 @@ li {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin-left: 100px;
+    margin-left: 150px;
 }
 
 .nav-links li {
-    margin-right: 100px;
+    margin-right: 70px;
     /* Adjust margin for spacing */
     margin-bottom: 5px;
     /* Add spacing between links */
@@ -113,17 +113,92 @@ li {
     margin-right: 5px;
 }
 
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
-    .nav-links li {
-        margin-right: 20px;
-        /* Adjust margin for spacing */
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .subnavbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .logo {
+        margin-left: 0;
+        text-align: center;
     }
 
     .search-bar {
-        flex: none;
-        /* Reset flex value */
+        margin-left: 0;
         max-width: none;
-        /* Reset max-width */
+        width: 100%;
+    }
+
+    .nav-links {
+        margin-left: 0;
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .subnav-links {
+        margin-left: 0;
+        margin-top: 10px;
+        margin-right: 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .subnav-links li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+@media (min-width: 481px) and (max-width: 1023px) {
+    .navbar {
+        padding: 15px;
+    }
+
+    .subnavbar {
+        padding: 15px;
+    }
+
+    .logo {
+        margin-left: 0;
+    }
+
+    .search-bar {
+        max-width: none;
+        width: auto;
+    }
+
+    .nav-links {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .nav-links li {
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+
+    .subnav-links {
+        margin-left: 0;
+        margin-top: 0;
+        margin-right: 0;
+    }
+
+    .subnav-links li {
+        margin-right: 20px;
+        margin-bottom: 0;
     }
 }
