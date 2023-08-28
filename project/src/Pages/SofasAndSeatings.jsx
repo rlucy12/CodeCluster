@@ -1,24 +1,28 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import {useState,useEffect} from "react";
-import "../Pages/home.css";
-const Home = () => {
-  const nav = useNavigate();
-//   function onSubmit() {
-//     nav("/product");
-//   }
-    const api = "http://localhost:3000/prods";
-    const [fetchedData, setfetchedData] = useState([]);
+// import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
-    async function fetchData() {
-      let res = await fetch(api);
-      let res1 = await res.json();
-      console.log(res1, "res1");
-      setfetchedData(res1);
-    }
+const SofasAndSeatings = () => {
+  const api = "http://localhost:3000/prods";
+  const [fetchedData, setfetchedData] = useState([]);
+  const [filterVal, setFilterVal] = useState([]);
+  async function fetchData() {
+    let res = await fetch(api);
+    let res1 = await res.json();
+    console.log(res1, "res1");
+    setfetchedData(res1);
+  }
+  useEffect(() => {
+    fetchData();
+  }, []);
+
     useEffect(() => {
-      fetchData();
-    }, []);
+      const category = fetchedData.filter((el) => 
+      el.category === "Sofas And Seatings"
+      );
+      setFilterVal(category);
+    }, [fetchedData]);
+
 
   return (
     <>
@@ -97,7 +101,7 @@ const Home = () => {
             </h4>
           </div>
           <div className="fourthdiv">
-            {fetchedData.slice(0, 6).map((e) => (
+            {filterVal.slice(0, 6).map((e) => (
               <div>
                 <span className="border">
                   <img
@@ -126,7 +130,7 @@ const Home = () => {
             </h4>
           </div>
           <div className="fifthdiv">
-            {fetchedData.slice(7, 10).map((e) => (
+            {filterVal.slice(7, 10).map((e) => (
               <div>
                 <img
                   // className="object-fit-sm-contain border rounded"
@@ -145,7 +149,7 @@ const Home = () => {
             ))}
           </div>
           <div className="fifthdiv">
-            {fetchedData.slice(10, 13).map((e) => (
+            {filterVal.slice(10, 13).map((e) => (
               <div>
                 <img
                   // className="object-fit-sm-contain border rounded"
@@ -171,7 +175,7 @@ const Home = () => {
             </h3>
           </div>
           <div className="seventhdiv">
-            {fetchedData.slice(14, 18).map((e) => (
+            {filterVal.slice(14, 18).map((e) => (
               <div>
                 <img
                   // className="object-fit-sm-contain border rounded"
@@ -197,7 +201,7 @@ const Home = () => {
             </h4>
           </div>
           <div className="eightthdiv">
-            {fetchedData.slice(1, 4).map((e) => (
+            {filterVal.slice(1, 4).map((e) => (
               <div>
                 <img
                   // className="object-fit-sm-contain border rounded"
@@ -216,7 +220,7 @@ const Home = () => {
             ))}
           </div>
           <div className="eightthdiv">
-            {fetchedData.slice(17, 20).map((e) => (
+            {filterVal.slice(17, 20).map((e) => (
               <div>
                 <img
                   // className="object-fit-sm-contain border rounded"
@@ -241,7 +245,7 @@ const Home = () => {
               Check Out These Collections
             </h3>
             <div id="ninthdiv">
-              {fetchedData.slice(5, 8).map((e) => (
+              {filterVal.slice(5, 8).map((e) => (
                 <div>
                   <img
                     // className="object-fit-sm-contain border rounded"
@@ -265,5 +269,4 @@ const Home = () => {
     </>
   );
 };
-export default Home;
-
+export default SofasAndSeatings;

@@ -1,0 +1,35 @@
+
+#container {
+  margin: 1cm;
+}
+.fourthdiv{
+    display:flex;
+    height: 300px;
+    width: 300px;
+}
+
+#fourthDiv{
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(4,2fr);
+}
+.fifthdiv{
+    display:flex;
+    justify-content: space-between;
+}
+.seventhdiv{
+    display: flex;
+}
+#eightthDiv {
+  margin: 1cm;
+}
+
+.eightthdiv {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#ninthdiv{
+    display: flex;
+    justify-content: space-around;
+} 
