@@ -1,0 +1,34 @@
+{
+  "user": [
+    {
+      "id": "Lucy23",
+      "name": "Lucy",
+      "email": "jds@gmail.com",
+      "password": "89564682"
+    },
+    {
+      "id": "Rajashree34",
+      "name": "Rajashree Senapati",
+      "email": "rajashrii@gmail.com",
+      "password": "12559"
+    },
+    {
+      "id": "Rajashree8",
+      "name": "Rajashree Senapati",
+      "email": "rajashrii@gmail.com",
+      "password": "12559"
+    },
+    {
+      "id": "ananya12",
+      "name": "ananya nayak",
+      "email": "ananya@gmail.com",
+      "password": "mjclakmfl,;l"
+    },
+    {
+      "id": "Karisma45",
+      "name": "Karisma Pani",
+      "email": "kpani@gmail.com",
+      "password": "21486798"
+    }
+  ]
+}

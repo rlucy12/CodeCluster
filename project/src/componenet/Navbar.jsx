@@ -1,7 +1,8 @@
 import React from 'react';
 import './nav.css'; // Import your CSS file for styling
-
+import { Link } from "react-router-dom"; 
 const NavigationBar = () => {
+ 
     return (
       <div className="navbar">
         <input type="text" className="search-bar" placeholder="Search..." />
@@ -9,13 +10,14 @@ const NavigationBar = () => {
 
         <ul className="nav-links">
           <li>
-            <a href="#">
+            <Link to="/registration">
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROfNP__EGAcz_0-ZyETlUBdMOVQM934MdkCg&usqp=CAU"
                 height="30px"
                 width="30px"
               />
-            </a>
+             </Link> 
+            
           </li>
           <li>
             <a href="#">
@@ -61,12 +63,11 @@ const NavigationBar = () => {
             <li>GIFT CARD</li>
             <li>GET INSPIRED</li>
             <li>TRACK YOUR ORDER</li>
-            <li>CONTACT US</li>
+            <li> <Link to="/contactus">CONTACT US</Link></li>
           </ul>
         </div>
         <div className="subnavbar">
           <ul className="subnav-links">
-            
             <li>
               <a href="#">Furniture</a>
             </li>
