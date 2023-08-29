@@ -1,7 +1,11 @@
 import React from 'react';
 import './nav.css'; // Import your CSS file for styling
-
+import {useNavigate} from "react-router-dom"
 const NavigationBar = () => {
+  const nav = useNavigate();
+  function onSubmit() {
+    nav("/about");
+  }
     return (
       <div className="navbar">
         <input type="text" className="search-bar" placeholder="Search..." />
@@ -66,12 +70,11 @@ const NavigationBar = () => {
         </div>
         <div className="subnavbar">
           <ul className="subnav-links">
-            
             <li>
               <a href="#">Furniture</a>
             </li>
             <li>
-              <a href="#">Sofas & Seating</a>
+              <a onClick={() => nav("/sofasAndSeatings")} >Sofas & Seating</a>
             </li>
             <li>
               <a href="#">Mattresses</a>
