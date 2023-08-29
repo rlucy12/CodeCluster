@@ -1,6 +1,7 @@
 import React from 'react';
 import './nav.css'; // Import your CSS file for styling
 import { Link } from "react-router-dom"; 
+// import AllRoutes from './AllRoutes';
 const NavigationBar = () => {
  
     return (
