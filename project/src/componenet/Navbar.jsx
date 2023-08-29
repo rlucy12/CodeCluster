@@ -70,35 +70,35 @@ const NavigationBar = () => {
         </div>
         <div className="subnavbar">
           <ul className="subnav-links">
-            <li>
-              <a href="#">Furniture</a>
+            <li class="nav-item">
+              <a onClick={() => nav("/furniture")}>Furniture</a>
             </li>
             <li>
-              <a onClick={() => nav("/sofasAndSeatings")} >Sofas & Seating</a>
+              <a onClick={() => nav("/sofasAndSeatings")}>Sofas & Seating</a>
             </li>
             <li>
-              <a href="#">Mattresses</a>
+              <a onClick={() => nav("/mattresses")}>Mattresses</a>
             </li>
             <li>
-              <a href="#">Home Decor</a>
+              <a onClick={() => nav("/homeDecor")}>Home Decor</a>
             </li>
             <li>
-              <a href="#">Furnishing</a>
+              <a onClick={() => nav("/furnishing")}>Furnishing</a>
             </li>
             <li>
-              <a href="#">Kitchen & Dining</a>
+              <a onClick={() => nav("/KitchenandDining")}>Kitchen & Dining</a>
             </li>
             <li>
-              <a href="#">Lamps & Lighting</a>
+              <a onClick={() => nav("/lampsandLighting")}>Lamps & Lighting</a>
             </li>
             <li>
-              <a href="#">Home Utility</a>
+              <a onClick={() => nav("/homeUtility")}>Home Utility</a>
             </li>
             <li>
-              <a href="#">Appliances</a>
+              <a onClick={() => nav("/appliances")}>Appliances</a>
             </li>
             <li>
-              <a href="#">Modular</a>
+              <a onClick={() => nav("/modular")}>Modular</a>
             </li>
           </ul>
         </div>

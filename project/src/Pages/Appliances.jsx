@@ -2,7 +2,7 @@ import React from "react";
 // import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const SofasAndSeatings = () => {
+const Appliances = () => {
   const api = "http://localhost:3000/prods";
   const [fetchedData, setfetchedData] = useState([]);
   const [filterVal, setFilterVal] = useState([]);
@@ -16,13 +16,10 @@ const SofasAndSeatings = () => {
     fetchData();
   }, []);
 
-    useEffect(() => {
-      const category = fetchedData.filter((el) => 
-      el.category === "Sofas And Seatings"
-      );
-      setFilterVal(category);
-    }, [fetchedData]);
-
+  useEffect(() => {
+    const category = fetchedData.filter((el) => el.category === "Appliances");
+    setFilterVal(category);
+  }, [fetchedData]);
 
   return (
     <>
@@ -36,13 +33,13 @@ const SofasAndSeatings = () => {
             loading="eager"
             height={550}
             width="auto"
-            src="https://ii1.pepperfry.com/assets/408386f0-4a34-4f52-bdd0-6ca1d2a9a6bf.jpg"
+            src="https://ii3.pepperfry.com/assets/a831d4_1676546293481_Appliances_banner_16feb_1280.jpg"
             alt="image alt image"
           />
         </div>
         <div style={{ margin: "1cm" }}>
           <h4 style={{ textAlign: "center", color: "brown" }}>
-            Care For Your Furniture
+            Deals of the day
           </h4>
         </div>
         <div
@@ -61,7 +58,7 @@ const SofasAndSeatings = () => {
               className="img-fluid"
               // width={458}
               height="122.8"
-              src="https://ii3.pepperfry.com/assets/24315272-4907-4135-88f0-bf77a3f1a838.jpg"
+              src="https://ii3.pepperfry.com/assets/f62fa1_1676902249625_furnishing_1280_deal_17feb_1.jpg"
               alt=""
             />
           </div>
@@ -70,7 +67,7 @@ const SofasAndSeatings = () => {
               className="img-fluid"
               // width={458}
               height="122.8"
-              src="https://ii3.pepperfry.com/assets/9f064768-808f-42a3-bc7b-f7923a750179.jpg"
+              src="https://ii3.pepperfry.com/assets/fa4aae_1676902262736_furnishing_1280_deal_17feb_2.jpg"
               alt=""
             />
           </div>
@@ -79,7 +76,8 @@ const SofasAndSeatings = () => {
           <div>
             <h4
               id="frydeal"
-              style={{ textAlign: "center", color: "brown", margin: "1cm" }}>
+              style={{ textAlign: "center", color: "brown", margin: "1cm" }}
+            >
               Shop Best Sellers
             </h4>
           </div>
@@ -106,21 +104,14 @@ const SofasAndSeatings = () => {
             ))}
           </div>
         </div>
-        <div id="fifthDiv" style={{ margin: "1cm" }}>
+        <div id="seventhDiv">
           <div>
-            <h4
-              id="frydeal"
-              style={{ textAlign: "center", color: "brown", margin: "1cm" }}>
-              Explore Most Wanted
-            </h4>
-          </div>
-          <div className="fifthdiv">
             {filterVal.map((e) => (
               <div>
                 <img
                   // className="object-fit-sm-contain border rounded"
                   className="img-fluid"
-                  id="fifthdivimg"
+                  id="seventhdivimg"
                   src={e.image}
                   alt={e.title}
                   style={{ height: 230, width: 230 }}
@@ -138,4 +129,4 @@ const SofasAndSeatings = () => {
     </>
   );
 };
-export default SofasAndSeatings;
+export default Appliances;

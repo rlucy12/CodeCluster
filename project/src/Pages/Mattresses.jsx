@@ -2,7 +2,7 @@ import React from "react";
 // import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const SofasAndSeatings = () => {
+const Mattresses = () => {
   const api = "http://localhost:3000/prods";
   const [fetchedData, setfetchedData] = useState([]);
   const [filterVal, setFilterVal] = useState([]);
@@ -16,13 +16,12 @@ const SofasAndSeatings = () => {
     fetchData();
   }, []);
 
-    useEffect(() => {
-      const category = fetchedData.filter((el) => 
-      el.category === "Sofas And Seatings"
-      );
-      setFilterVal(category);
-    }, [fetchedData]);
-
+  useEffect(() => {
+    const category = fetchedData.filter(
+      (el) => el.category === "Mattresses"
+    );
+    setFilterVal(category);
+  }, [fetchedData]);
 
   return (
     <>
@@ -34,52 +33,18 @@ const SofasAndSeatings = () => {
           <img
             className="img-fluid"
             loading="eager"
-            height={550}
+            height={450}
             width="auto"
-            src="https://ii1.pepperfry.com/assets/408386f0-4a34-4f52-bdd0-6ca1d2a9a6bf.jpg"
+            src="https://ii1.pepperfry.com/assets/8970448c-ab07-4fd8-a1cc-3a19ece11f5f.jpg"
             alt="image alt image"
           />
-        </div>
-        <div style={{ margin: "1cm" }}>
-          <h4 style={{ textAlign: "center", color: "brown" }}>
-            Care For Your Furniture
-          </h4>
-        </div>
-        <div
-          id="secondDiv"
-          style={{
-            height: "122.8",
-            width: "1400",
-            margin: "1cm 0cm 0cm 0cm",
-            marginRight: "1px",
-            display: "flex",
-            // flexWrap:"wrap",
-          }}
-        >
-          <div className="seconddiv" style={{ padding: "0px 6px" }}>
-            <img
-              className="img-fluid"
-              // width={458}
-              height="122.8"
-              src="https://ii3.pepperfry.com/assets/24315272-4907-4135-88f0-bf77a3f1a838.jpg"
-              alt=""
-            />
-          </div>
-          <div className="seconddiv" style={{ padding: "0px 6px" }}>
-            <img
-              className="img-fluid"
-              // width={458}
-              height="122.8"
-              src="https://ii3.pepperfry.com/assets/9f064768-808f-42a3-bc7b-f7923a750179.jpg"
-              alt=""
-            />
-          </div>
         </div>
         <div className="fourthDiv" style={{ margin: "1cm" }}>
           <div>
             <h4
               id="frydeal"
-              style={{ textAlign: "center", color: "brown", margin: "1cm" }}>
+              style={{ textAlign: "center", color: "brown", margin: "1cm" }}
+            >
               Shop Best Sellers
             </h4>
           </div>
@@ -110,12 +75,13 @@ const SofasAndSeatings = () => {
           <div>
             <h4
               id="frydeal"
-              style={{ textAlign: "center", color: "brown", margin: "1cm" }}>
+              style={{ textAlign: "center", color: "brown", margin: "1cm" }}
+            >
               Explore Most Wanted
             </h4>
           </div>
-          <div className="fifthdiv">
-            {filterVal.map((e) => (
+          <div className="fifthdiv" style={{display:"flex"}}>
+            {filterVal.slice(7, 10).map((e) => (
               <div>
                 <img
                   // className="object-fit-sm-contain border rounded"
@@ -134,8 +100,27 @@ const SofasAndSeatings = () => {
             ))}
           </div>
         </div>
+        <div id="seventhDiv">
+          {filterVal.map((e) => (
+            <div>
+              <img
+                // className="object-fit-sm-contain border rounded"
+                className="img-fluid"
+                id="seventhdivimg"
+                src={e.image}
+                alt={e.title}
+                style={{ height: 230, width: 230 }}
+              />
+              <p>{e.title}</p>
+              <p>Price: ${e.price}</p>
+
+              {/* <p>Description: {e.description}</p> */}
+              {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
 };
-export default SofasAndSeatings;
+export default Mattresses;
