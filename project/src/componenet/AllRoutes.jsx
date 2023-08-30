@@ -16,6 +16,7 @@ import LampsandLighting from "../Pages/LampsandLighting";
 import Modular from "../Pages/Modular";
 import Furniture from "../Pages/Furniture";
 import SingleProdPage from "./SingleProdPage";
+import Seller from "./seller";
 // import Product from "../pages/Product";
 // import SingleProdPage from "./singleProdPage";
 const AllRoutes = () => {
@@ -31,6 +32,7 @@ const AllRoutes = () => {
       </Route>
       <Route path="/login" element={<Login />}></Route>
       <Route path="/contactus" element={<Contactus />}></Route>
+      <Route path="/seller" element={<Seller/>}></Route>
       <Route path="/" element={<Home />}></Route>
       <Route path="/furniture" element={<Furniture />}></Route>
       <Route path="/sofasAndSeatings" element={<SofasAndSeatings />}></Route>
