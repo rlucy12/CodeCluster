@@ -1,6 +1,9 @@
+
 import React from "react";
 import "./nav.css"; // Import your CSS file for styling
 import { useNavigate } from "react-router-dom";
+
+
 const NavigationBar = () => {
   const nav = useNavigate();
   // function onSubmit() {
@@ -103,6 +106,54 @@ const NavigationBar = () => {
             <a href="#">Modular</a>
           </li>
         </ul>
+      <div/>
+        <div className="navbar1">
+          <ul className="nav-links">
+            <li>SELL ON PEPPERFRY</li>
+            <li>BECOME A FRANCHISEE</li>
+            <li>BUY IN BULK</li>
+            <li>FIND A STUDIO</li>
+            <li>GIFT CARD</li>
+            <li>GET INSPIRED</li>
+            <li>TRACK YOUR ORDER</li>
+            <li>CONTACT US</li>
+          </ul>
+        </div>
+        <div className="subnavbar">
+          <ul className="subnav-links">
+            <li class="nav-item">
+              <a onClick={() => nav("/furniture")}>Furniture</a>
+            </li>
+            <li>
+              <a onClick={() => nav("/sofasAndSeatings")}>Sofas & Seating</a>
+            </li>
+            <li>
+              <a onClick={() => nav("/mattresses")}>Mattresses</a>
+            </li>
+            <li>
+              <a onClick={() => nav("/homeDecor")}>Home Decor</a>
+            </li>
+            <li>
+              <a onClick={() => nav("/furnishing")}>Furnishing</a>
+            </li>
+            <li>
+              <a onClick={() => nav("/KitchenandDining")}>Kitchen & Dining</a>
+            </li>
+            <li>
+              <a onClick={() => nav("/lampsandLighting")}>Lamps & Lighting</a>
+            </li>
+            <li>
+              <a onClick={() => nav("/homeUtility")}>Home Utility</a>
+            </li>
+            <li>
+              <a onClick={() => nav("/appliances")}>Appliances</a>
+            </li>
+            <li>
+              <a onClick={() => nav("/modular")}>Modular</a>
+            </li>
+          </ul>
+        </div>
+
       </div>
     </div>
   );

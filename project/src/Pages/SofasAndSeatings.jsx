@@ -36,10 +36,17 @@ const SofasAndSeatings = () => {
             loading="eager"
             height={550}
             width="auto"
-            src="https://ii1.pepperfry.com/assets/c1ff96a1-598f-4310-a474-609c600c729f.jpg"
+
+            src="https://ii1.pepperfry.com/assets/408386f0-4a34-4f52-bdd0-6ca1d2a9a6bf.jpg"
             alt="image alt image"
           />
         </div>
+        <div style={{ margin: "1cm" }}>
+          <h4 style={{ textAlign: "center", color: "brown" }}>
+            Care For Your Furniture
+          </h4>
+        </div>
+
         <div
           id="secondDiv"
           style={{
@@ -54,6 +61,7 @@ const SofasAndSeatings = () => {
           <div className="seconddiv" style={{ padding: "0px 6px" }}>
             <img
               className="img-fluid"
+
               width={458}
               height="122.8"
               src="https://ii2.pepperfry.com/assets/1ec35dcb-4b69-4bb8-a3c3-8d57d970a6af.jpg"
@@ -64,21 +72,29 @@ const SofasAndSeatings = () => {
             <img
               className="img-fluid"
               width={458}
+            
+              // width={458}
               height="122.8"
-              src="https://ii3.pepperfry.com/assets/4e0f2d20-9b93-4937-a207-8b475e649446.jpg"
+              src="https://ii3.pepperfry.com/assets/24315272-4907-4135-88f0-bf77a3f1a838.jpg"
+
               alt=""
             />
           </div>
           <div className="seconddiv" style={{ padding: "0px 6px" }}>
             <img
               className="img-fluid"
+
               width={458}
+             
+              // width={458}
               height="122.8"
-              src="https://ii1.pepperfry.com/assets/a6abb7d7-816f-4f77-8929-4c32a20f4d90.jpg"
+              src="https://ii3.pepperfry.com/assets/9f064768-808f-42a3-bc7b-f7923a750179.jpg"
+
               alt=""
             />
           </div>
         </div>
+
         <div id="thirddiv" style={{ margin: "1cm 0cm" }}>
           {/* <img
             width={1407}
@@ -94,10 +110,15 @@ const SofasAndSeatings = () => {
             max-width="100%"
           ></img>
         </div>
+        
+          
         <div className="fourthDiv" style={{ margin: "1cm" }}>
           <div>
-            <h4 id="frydeal" style={{ textAlign: "center", color: "brown" }}>
-              Shop What The Fry Deals
+            <h4
+              id="frydeal"
+              style={{ textAlign: "center", color: "brown", margin: "1cm" }}>
+              Shop Best Sellers
+
             </h4>
           </div>
           <div className="fourthdiv">
@@ -125,11 +146,17 @@ const SofasAndSeatings = () => {
         </div>
         <div id="fifthDiv" style={{ margin: "1cm" }}>
           <div>
-            <h4 id="frydeal" style={{ textAlign: "center", color: "brown" }}>
+
+      
+            <h4
+              id="frydeal"
+              style={{ textAlign: "center", color: "brown", margin: "1cm" }}>
+
               Explore Most Wanted
             </h4>
           </div>
           <div className="fifthdiv">
+
             {filterVal.slice(7, 10).map((e) => (
               <div>
                 <img
@@ -149,7 +176,9 @@ const SofasAndSeatings = () => {
             ))}
           </div>
           <div className="fifthdiv">
-            {filterVal.slice(10, 13).map((e) => (
+  
+            {filterVal.map((e) => (
+
               <div>
                 <img
                   // className="object-fit-sm-contain border rounded"
@@ -168,6 +197,7 @@ const SofasAndSeatings = () => {
             ))}
           </div>
         </div>
+
         <div id="seventhDiv">
           <div>
             <h3 style={{ textAlign: "center", color: "brown" }}>
@@ -264,7 +294,7 @@ const SofasAndSeatings = () => {
               ))}
             </div>
           </div>
-        </div>
+
       </div>
     </>
   );

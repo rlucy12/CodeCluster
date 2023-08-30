@@ -92,7 +92,12 @@ const Home = () => {
         </div>
         <div className="fourthDiv" style={{ margin: "1cm" }}>
           <div>
-            <h4 id="frydeal" style={{ textAlign: "center", color: "brown" }}>
+
+            <h4
+              id="frydeal"
+              style={{ textAlign: "center", color: "brown", margin: "1cm" }}
+            >
+
               Shop What The Fry Deals
             </h4>
           </div>
@@ -121,7 +126,12 @@ const Home = () => {
         </div>
         <div id="fifthDiv" style={{ margin: "1cm" }}>
           <div>
-            <h4 id="frydeal" style={{ textAlign: "center", color: "brown" }}>
+
+            <h4
+              id="frydeal"
+              style={{ textAlign: "center", color: "brown", margin: "1cm" }}
+            >
+
               Explore Most Wanted
             </h4>
           </div>
@@ -166,7 +176,9 @@ const Home = () => {
         </div>
         <div id="seventhDiv">
           <div>
-            <h3 style={{ textAlign: "center", color: "brown" }}>
+
+            <h3 style={{ textAlign: "center", color: "brown", margin: "1cm" }}>
+
               Discover Our Newest Arrivals
             </h3>
           </div>
@@ -192,7 +204,12 @@ const Home = () => {
         </div>
         <div id="eightthDiv" style={{ margin: "1cm" }}>
           <div>
-            <h4 id="frydeal" style={{ textAlign: "center", color: "brown" }}>
+       
+            <h4
+              id="frydeal"
+              style={{ textAlign: "center", color: "brown", margin: "1cm" }}
+            >
+
               Explore Most Wanted
             </h4>
           </div>
@@ -237,7 +254,9 @@ const Home = () => {
         </div>
         <div id="ninthDiv">
           <div>
-            <h3 style={{ textAlign: "center", color: "brown" }}>
+
+            <h3 style={{ textAlign: "center", color: "brown", margin: "1cm" }}>
+
               Check Out These Collections
             </h3>
             <div id="ninthdiv">
