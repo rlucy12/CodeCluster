@@ -59,54 +59,7 @@ const NavigationBar = () => {
           <li>GIFT CARD</li>
           <li>CONTACT US</li> */}
       </ul>
-      <div className="navbar1">
-        <ul className="nav-links">
-          <li>SELL ON PEPPERFRY</li>
-          <li>BECOME A FRANCHISEE</li>
-          <li>BUY IN BULK</li>
-          <li>FIND A STUDIO</li>
-          <li>GIFT CARD</li>
-          <li>GET INSPIRED</li>
-          <li>TRACK YOUR ORDER</li>
-          <li>
-            <a onClick={() => nav("/contactus")}>CONTACT US</a>
-          </li>
-        </ul>
-      </div>
-      <div className="subnavbar">
-        <ul className="subnav-links">
-          <li>
-            <a href="#">Furniture</a>
-          </li>
-          <li>
-            <a onClick={() => nav("/sofasAndSeatings")}>Sofas & Seating</a>
-          </li>
-          <li>
-            <a href="#">Mattresses</a>
-          </li>
-          <li>
-            <a href="#">Home Decor</a>
-          </li>
-          <li>
-            <a href="#">Furnishing</a>
-          </li>
-          <li>
-            <a href="#">Kitchen & Dining</a>
-          </li>
-          <li>
-            <a href="#">Lamps & Lighting</a>
-          </li>
-          <li>
-            <a href="#">Home Utility</a>
-          </li>
-          <li>
-            <a href="#">Appliances</a>
-          </li>
-          <li>
-            <a href="#">Modular</a>
-          </li>
-        </ul>
-      <div/>
+      
         <div className="navbar1">
           <ul className="nav-links">
             <li>SELL ON PEPPERFRY</li>
@@ -116,7 +69,7 @@ const NavigationBar = () => {
             <li>GIFT CARD</li>
             <li>GET INSPIRED</li>
             <li>TRACK YOUR ORDER</li>
-            <li>CONTACT US</li>
+            <li><a onClick={() => nav("/contactus")}>CONTACT US</a></li>
           </ul>
         </div>
         <div className="subnavbar">
@@ -155,7 +108,7 @@ const NavigationBar = () => {
         </div>
 
       </div>
-    </div>
+    
   );
 };
 

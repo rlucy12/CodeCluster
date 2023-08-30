@@ -336,9 +336,10 @@ const SofasAndSeatings = () => {
               ))}
             </div>
           </div>
-
+        </div>
       </div>
     </>
-  );
+);
 };
+
 export default SofasAndSeatings;
