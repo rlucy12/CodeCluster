@@ -17,22 +17,23 @@ import Modular from "../Pages/Modular";
 import Furniture from "../Pages/Furniture";
 import SingleProdPage from "./SingleProdPage";
 import Seller from "./seller";
+import Cart from "./Cart";
+import Wishlist from "./Wishlist";
 // import Product from "../pages/Product";
 // import SingleProdPage from "./singleProdPage";
 const AllRoutes = () => {
   return (
     <Routes>
-  
-      <Route path="/" element={<Home />}>
+      <Route path="/home" element={<Home />}>
         Home Page
       </Route>
-      <Route path="/navbar" element={<NavigationBar/>}></Route>
+      <Route path="/navbar" element={<NavigationBar />}></Route>
       <Route path="/registration" element={<Register />}>
         Register
       </Route>
       <Route path="/login" element={<Login />}></Route>
       <Route path="/contactus" element={<Contactus />}></Route>
-      <Route path="/seller" element={<Seller/>}></Route>
+      <Route path="/seller" element={<Seller />}></Route>
       <Route path="/" element={<Home />}></Route>
       <Route path="/furniture" element={<Furniture />}></Route>
       <Route path="/sofasAndSeatings" element={<SofasAndSeatings />}></Route>
@@ -42,10 +43,12 @@ const AllRoutes = () => {
       <Route path="/lampsandLighting" element={<LampsandLighting />}></Route>
       <Route path="/kitchenandDining" element={<KitchenandDining />}></Route>
       <Route path="/appliances" element={<Appliances />}></Route>
-      <Route path="/HomeUtility" element={<HomeUtility />}></Route>
+      <Route path="/homeUtility" element={<HomeUtility />}></Route>
+      <Route path="/cart" element={<Cart />}></Route>
+      <Route path="/wishlist" element={<Wishlist />}></Route>
       <Route path="/modular" element={<Modular />}></Route>
-      <Route path="/product/:id" element={<SingleProdPage />}/>
-
+      <Route path="/product/:id" element={<SingleProdPage />} />
+      <Route path="/posts/:id" element={<Cart />} />
     </Routes>
   );
 };

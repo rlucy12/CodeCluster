@@ -28,8 +28,38 @@ const LampsandLighting = () => {
   function nav(id) {
     navigate(`/product/${id}`);
   }
-  function navcart() {
-    navigate(`/product/${id}`);
+  
+  function addToWish(product) {
+    fetch("http://localhost:5000/wish", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(product),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Product added to cart:", data);
+      })
+      .catch((error) => {
+        console.error("Error adding product to cart:", error);
+      });
+  }
+  function navcart(product) {
+    fetch("http://localhost:4000/posts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(product),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Product added to cart:", data);
+      })
+      .catch((error) => {
+        console.error("Error adding product to cart:", error);
+      });
   }
   return (
     <>
@@ -91,10 +121,23 @@ const LampsandLighting = () => {
               Shop Best Sellers
             </h4>
           </div>
-          <div className="fourthdiv">
+          <div
+            id="fourthdiv"
+            className="row row-cols-1 row-cols-md-3 g-4"
+            style={{ justifyContent: "space-around" }}
+          >
             {filterVal.slice(0, 6).map((e) => (
-              <div>
+              <div className="card" style={{ width: "18rem" }}>
                 <span className="border">
+                  <div>
+                    <a onClick={() => addToWish(e)}>
+                      <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs88ap2H-nGBMBxIz9MaeWx8XvqmNYQrsinw&usqp=CAU"
+                        width="30x"
+                        height="30px"
+                      ></img>
+                    </a>
+                  </div>
                   <img
                     className="object-fit-sm-contain border rounded"
                     // className="rounded float-start"
@@ -105,19 +148,19 @@ const LampsandLighting = () => {
                     style={{ height: 230, width: 230 }}
                   />
                   <p>{e.title}</p>
-                  <p>Price: ${e.price}</p>
+                  <p>Price: Rs.{e.price}</p>
                   <div style={{ display: "flex" }}>
                     <button
                       type="button"
-                      className="btn btn-primary"
+                      className="btn btn-primary btn-sm btn-font-size-sm"
                       onClick={() => nav(e.id)}
                     >
                       Buy Now
                     </button>
                     <button
                       type="button"
-                      className="btn btn-primary"
-                      onClick={navcart}
+                      className="btn btn-primary btn-sm btn-font-size-sm"
+                      onClick={() => navcart(e)}
                     >
                       Add To Cart
                     </button>
@@ -131,9 +174,21 @@ const LampsandLighting = () => {
           </div>
         </div>
         <div id="seventhDiv">
-          <div>
+          <div
+            className="row row-cols-1 row-cols-md-3 g-4"
+            style={{ justifyContent: "space-around" }}
+          >
             {filterVal.map((e) => (
-              <div>
+              <div className="card" style={{ width: "18rem" }}>
+                <div>
+                  <a onClick={() => addToWish(e)}>
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs88ap2H-nGBMBxIz9MaeWx8XvqmNYQrsinw&usqp=CAU"
+                      width="30x"
+                      height="30px"
+                    ></img>
+                  </a>
+                </div>
                 <img
                   // className="object-fit-sm-contain border rounded"
                   className="img-fluid"
@@ -143,20 +198,20 @@ const LampsandLighting = () => {
                   style={{ height: 230, width: 230 }}
                 />
                 <p>{e.title}</p>
-                <p>Price: ${e.price}</p>
+                <p>Price: Rs.{e.price}</p>
 
                 <div style={{ display: "flex" }}>
                   <button
                     type="button"
-                    className="btn btn-primary"
+                    className="btn btn-primary btn-sm btn-font-size-sm"
                     onClick={() => nav(e.id)}
                   >
                     Buy Now
                   </button>
                   <button
                     type="button"
-                    className="btn btn-primary"
-                    onClick={navcart}
+                    className="btn btn-primary btn-sm btn-font-size-sm"
+                    onClick={() => navcart(e)}
                   >
                     Add To Cart
                   </button>

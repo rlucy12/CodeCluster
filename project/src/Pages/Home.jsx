@@ -19,11 +19,44 @@ const Home = () => {
       fetchData();
     }, []);
 
-    // const nav = useNavigate();
-    
+    const navigate = useNavigate();
     function nav(id) {
       navigate(`/product/${id}`);
     }
+    
+  function navcart(product) {
+    fetch("http://localhost:4000/posts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(product),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Product added to cart:", data);
+      })
+      .catch((error) => {
+        console.error("Error adding product to cart:", error);
+      });
+  }
+
+  function addToWish(product) {
+    fetch("http://localhost:5000/wish", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(product),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Product added to cart:", data);
+      })
+      .catch((error) => {
+        console.error("Error adding product to cart:", error);
+      });
+  }
   return (
     <>
       <meta charSet="UTF-8" />
@@ -96,19 +129,30 @@ const Home = () => {
         </div>
         <div className="fourthDiv" style={{ margin: "1cm" }}>
           <div>
-
             <h4
               id="frydeal"
               style={{ textAlign: "center", color: "brown", margin: "1cm" }}
             >
-
               Shop What The Fry Deals
             </h4>
           </div>
-          <div className="fourthdiv">
+          <div
+            id="fourthdiv"
+            className="row row-cols-1 row-cols-md-3 g-4"
+            style={{ justifyContent: "space-around" }}
+          >
             {fetchedData.slice(0, 6).map((e) => (
-              <div>
-                <span className="border">
+              <div className="card" style={{ width: "18rem" }}>
+                <span >
+                  <div>
+                    <a onClick={() => addToWish(e)}>
+                      <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs88ap2H-nGBMBxIz9MaeWx8XvqmNYQrsinw&usqp=CAU"
+                        width="30x"
+                        height="30px"
+                      ></img>
+                    </a>
+                  </div>
                   <img
                     className="object-fit-sm-contain border rounded"
                     // className="rounded float-start"
@@ -119,22 +163,22 @@ const Home = () => {
                     style={{ height: 230, width: 230 }}
                   />
                   <p>{e.title}</p>
-                  <p>Price: ${e.price}</p>
+                  <p>Price: Rs.{e.price}</p>
                   <div style={{ display: "flex" }}>
                     <button
                       type="button"
-                      className="btn btn-primary"
+                      className="btn btn-primary btn-sm btn-font-size-sm"
                       onClick={() => nav(e.id)}
                     >
                       Buy Now
                     </button>
-                    {/* <button
+                    <button
                       type="button"
-                      className="btn btn-primary"
-                      onClick={navcart}
+                      className="btn btn-primary btn-sm btn-font-size-sm"
+                      onClick={() => navcart(e)}
                     >
                       Add To Cart
-                    </button> */}
+                    </button>
                   </div>
                 </span>
 
@@ -146,18 +190,30 @@ const Home = () => {
         </div>
         <div id="fifthDiv" style={{ margin: "1cm" }}>
           <div>
-
             <h4
               id="frydeal"
               style={{ textAlign: "center", color: "brown", margin: "1cm" }}
             >
-
               Explore Most Wanted
             </h4>
           </div>
-          <div className="fifthdiv">
+          <div
+            id="fifthdiv"
+            className="row row-cols-1 row-cols-md-3 g-4"
+            style={{ justifyContent: "space-around" ,margin:"1cm"}}
+          >
             {fetchedData.slice(7, 10).map((e) => (
-              <div>
+              <div className="card" style={{ width: "18rem" }}>
+                <div>
+                  <a onClick={() => addToWish(e)}>
+                    <img
+                      // class="rounded float-end"
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs88ap2H-nGBMBxIz9MaeWx8XvqmNYQrsinw&usqp=CAU"
+                      width="30x"
+                      height="30px"
+                    ></img>
+                  </a>
+                </div>
                 <img
                   // className="object-fit-sm-contain border rounded"
                   className="img-fluid"
@@ -167,22 +223,22 @@ const Home = () => {
                   style={{ height: 230, width: 230 }}
                 />
                 <p>{e.title}</p>
-                <p>Price: ${e.price}</p>
+                <p>Price: Rs.{e.price}</p>
                 <div style={{ display: "flex" }}>
                   <button
                     type="button"
-                    className="btn btn-primary"
+                    className="btn btn-primary btn-sm btn-font-size-sm"
                     onClick={() => nav(e.id)}
                   >
                     Buy Now
                   </button>
-                  {/* <button
+                  <button
                     type="button"
-                    className="btn btn-primary"
-                    onClick={navcart}
+                    className="btn btn-primary btn-sm btn-font-size-sm"
+                    onClick={() => navcart(e)}
                   >
                     Add To Cart
-                  </button> */}
+                  </button>
                 </div>
 
                 {/* <p>Description: {e.description}</p> */}
@@ -190,9 +246,22 @@ const Home = () => {
               </div>
             ))}
           </div>
-          <div className="fifthdiv">
+          <div
+            id="fifthdiv"
+            className="row row-cols-1 row-cols-md-3 g-4"
+            style={{ justifyContent: "space-around" }}
+          >
             {fetchedData.slice(10, 13).map((e) => (
-              <div>
+              <div className="card" style={{ width: "18rem" }}>
+                <div>
+                  <a onClick={() => addToWish(e)}>
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs88ap2H-nGBMBxIz9MaeWx8XvqmNYQrsinw&usqp=CAU"
+                      width="30x"
+                      height="30px"
+                    ></img>
+                  </a>
+                </div>
                 <img
                   // className="object-fit-sm-contain border rounded"
                   className="img-fluid"
@@ -202,22 +271,22 @@ const Home = () => {
                   style={{ height: 230, width: 230 }}
                 />
                 <p>{e.title}</p>
-                <p>Price: ${e.price}</p>
+                <p>Price: Rs.{e.price}</p>
                 <div style={{ display: "flex" }}>
                   <button
                     type="button"
-                    className="btn btn-primary"
+                    className="btn btn-primary btn-sm btn-font-size-sm"
                     onClick={() => nav(e.id)}
                   >
                     Buy Now
                   </button>
-                  {/* <button
+                  <button
                     type="button"
-                    className="btn btn-primary"
-                    onClick={navcart}
+                    className="btn btn-primary btn-sm btn-font-size-sm"
+                    onClick={() => navcart(e)}
                   >
                     Add To Cart
-                  </button> */}
+                  </button>
                 </div>
 
                 {/* <p>Description: {e.description}</p> */}
@@ -228,15 +297,26 @@ const Home = () => {
         </div>
         <div id="seventhDiv">
           <div>
-
             <h3 style={{ textAlign: "center", color: "brown", margin: "1cm" }}>
-
               Discover Our Newest Arrivals
             </h3>
           </div>
-          <div className="seventhdiv">
+          <div
+            id="seventhdiv"
+            className="row row-cols-1 row-cols-md-3 g-4"
+            style={{ justifyContent: "space-around" }}
+          >
             {fetchedData.slice(14, 18).map((e) => (
-              <div>
+              <div className="card" style={{ width: "18rem" }}>
+                <div>
+                  <a onClick={() => addToWish(e)}>
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs88ap2H-nGBMBxIz9MaeWx8XvqmNYQrsinw&usqp=CAU"
+                      width="30x"
+                      height="30px"
+                    ></img>
+                  </a>
+                </div>
                 <img
                   // className="object-fit-sm-contain border rounded"
                   className="img-fluid"
@@ -246,22 +326,22 @@ const Home = () => {
                   style={{ height: 230, width: 230 }}
                 />
                 <p>{e.title}</p>
-                <p>Price: ${e.price}</p>
+                <p>Price: Rs.{e.price}</p>
                 <div style={{ display: "flex" }}>
                   <button
                     type="button"
-                    className="btn btn-primary"
+                    className="btn btn-primary btn-sm btn-font-size-sm"
                     onClick={() => nav(e.id)}
                   >
                     Buy Now
                   </button>
-                  {/* <button
+                  <button
                     type="button"
-                    className="btn btn-primary"
-                    onClick={navcart}
+                    className="btn btn-primary btn-sm btn-font-size-sm"
+                    onClick={() => navcart(e)}
                   >
                     Add To Cart
-                  </button> */}
+                  </button>
                 </div>
 
                 {/* <p>Description: {e.description}</p> */}
@@ -272,18 +352,29 @@ const Home = () => {
         </div>
         <div id="eightthDiv" style={{ margin: "1cm" }}>
           <div>
-       
             <h4
               id="frydeal"
               style={{ textAlign: "center", color: "brown", margin: "1cm" }}
             >
-
               Explore Most Wanted
             </h4>
           </div>
-          <div className="eightthdiv">
+          <div
+            id="eightthdiv"
+            className="row row-cols-1 row-cols-md-3 g-4"
+            style={{ justifyContent: "space-around",margin:"1cm" }}
+          >
             {fetchedData.slice(1, 4).map((e) => (
-              <div>
+              <div className="card" style={{ width: "18rem" }}>
+                <div>
+                  <a onClick={() => addToWish(e)}>
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs88ap2H-nGBMBxIz9MaeWx8XvqmNYQrsinw&usqp=CAU"
+                      width="30x"
+                      height="30px"
+                    ></img>
+                  </a>
+                </div>
                 <img
                   // className="object-fit-sm-contain border rounded"
                   className="img-fluid"
@@ -293,22 +384,22 @@ const Home = () => {
                   style={{ height: 230, width: 230 }}
                 />
                 <p>{e.title}</p>
-                <p>Price: ${e.price}</p>
+                <p>Price: Rs.{e.price}</p>
                 <div style={{ display: "flex" }}>
                   <button
                     type="button"
-                    className="btn btn-primary"
+                    className="btn btn-primary btn-sm btn-font-size-sm"
                     onClick={() => nav(e.id)}
                   >
                     Buy Now
                   </button>
-                  {/* <button
+                  <button
                     type="button"
-                    className="btn btn-primary"
-                    onClick={navcart}
+                    className="btn btn-primary btn-sm btn-font-size-sm"
+                    onClick={() => navcart(e)}
                   >
                     Add To Cart
-                  </button> */}
+                  </button>
                 </div>
 
                 {/* <p>Description: {e.description}</p> */}
@@ -316,9 +407,22 @@ const Home = () => {
               </div>
             ))}
           </div>
-          <div className="eightthdiv">
+          <div
+            id="eightthdiv"
+            className="row row-cols-1 row-cols-md-3 g-4"
+            style={{ justifyContent: "space-around" }}
+          >
             {fetchedData.slice(17, 20).map((e) => (
-              <div>
+              <div className="card" style={{ width: "18rem" }}>
+                <div>
+                  <a onClick={() => addToWish(e)}>
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs88ap2H-nGBMBxIz9MaeWx8XvqmNYQrsinw&usqp=CAU"
+                      width="30x"
+                      height="30px"
+                    ></img>
+                  </a>
+                </div>
                 <img
                   // className="object-fit-sm-contain border rounded"
                   className="img-fluid"
@@ -328,22 +432,22 @@ const Home = () => {
                   style={{ height: 230, width: 230 }}
                 />
                 <p>{e.title}</p>
-                <p>Price: ${e.price}</p>
+                <p>Price: Rs.{e.price}</p>
                 <div style={{ display: "flex" }}>
                   <button
                     type="button"
-                    className="btn btn-primary"
+                    className="btn btn-primary btn-sm btn-font-size-sm"
                     onClick={() => nav(e.id)}
                   >
                     Buy Now
                   </button>
-                  {/* <button
+                  <button
                     type="button"
-                    className="btn btn-primary"
-                    onClick={navcart}
+                    className="btn btn-primary btn-sm btn-font-size-sm"
+                    onClick={() => navcart(e)}
                   >
                     Add To Cart
-                  </button> */}
+                  </button>
                 </div>
 
                 {/* <p>Description: {e.description}</p> */}
@@ -354,14 +458,25 @@ const Home = () => {
         </div>
         <div id="ninthDiv">
           <div>
-
             <h3 style={{ textAlign: "center", color: "brown", margin: "1cm" }}>
-
               Check Out These Collections
             </h3>
-            <div id="ninthdiv">
+            <div
+              id="ninthdiv"
+              className="row row-cols-1 row-cols-md-3 g-4"
+              style={{ justifyContent: "space-around" }}
+            >
               {fetchedData.slice(5, 8).map((e) => (
-                <div>
+                <div className="card" style={{ width: "18rem" }}>
+                  <div>
+                    <a onClick={() => addToWish(e)}>
+                      <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs88ap2H-nGBMBxIz9MaeWx8XvqmNYQrsinw&usqp=CAU"
+                        width="30x"
+                        height="30px"
+                      ></img>
+                    </a>
+                  </div>
                   <img
                     // className="object-fit-sm-contain border rounded"
                     className="img-fluid"
@@ -371,22 +486,22 @@ const Home = () => {
                     style={{ height: 230, width: 230 }}
                   />
                   <p>{e.title}</p>
-                  <p>Price: ${e.price}</p>
+                  <p>Price: Rs.{e.price}</p>
                   <div style={{ display: "flex" }}>
                     <button
                       type="button"
-                      className="btn btn-primary"
+                      className="btn btn-primary btn-sm btn-font-size-sm"
                       onClick={() => nav(e.id)}
                     >
                       Buy Now
                     </button>
-                    {/* <button
+                    <button
                       type="button"
-                      className="btn btn-primary"
-                      onClick={navcart}
+                      className="btn btn-primary btn-sm btn-font-size-sm"
+                      onClick={() => navcart(e)}
                     >
                       Add To Cart
-                    </button> */}
+                    </button>
                   </div>
 
                   {/* <p>Description: {e.description}</p> */}

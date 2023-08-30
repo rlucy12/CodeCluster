@@ -28,10 +28,41 @@ const SofasAndSeatings = () => {
       navigate(`/product/${id}`);
     }
 
-    function navcart() {
-      navigate(`/product/${id}`);
-    }
+    
+  function navcart(product) {
+    fetch("http://localhost:4000/posts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(product),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Product added to cart:", data);
+      })
+      .catch((error) => {
+        console.error("Error adding product to cart:", error);
+      });
+  }
 
+
+  function addToWish(product) {
+    fetch("http://localhost:5000/wish", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(product),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Product added to cart:", data);
+      })
+      .catch((error) => {
+        console.error("Error adding product to cart:", error);
+      });
+  }
   return (
     <>
       <meta charSet="UTF-8" />
@@ -44,7 +75,6 @@ const SofasAndSeatings = () => {
             loading="eager"
             height={550}
             width="auto"
-
             src="https://ii1.pepperfry.com/assets/408386f0-4a34-4f52-bdd0-6ca1d2a9a6bf.jpg"
             alt="image alt image"
           />
@@ -69,7 +99,6 @@ const SofasAndSeatings = () => {
           <div className="seconddiv" style={{ padding: "0px 6px" }}>
             <img
               className="img-fluid"
-
               width={458}
               height="122.8"
               src="https://ii2.pepperfry.com/assets/1ec35dcb-4b69-4bb8-a3c3-8d57d970a6af.jpg"
@@ -80,24 +109,19 @@ const SofasAndSeatings = () => {
             <img
               className="img-fluid"
               width={458}
-            
               // width={458}
               height="122.8"
               src="https://ii3.pepperfry.com/assets/24315272-4907-4135-88f0-bf77a3f1a838.jpg"
-
               alt=""
             />
           </div>
           <div className="seconddiv" style={{ padding: "0px 6px" }}>
             <img
               className="img-fluid"
-
               width={458}
-             
               // width={458}
               height="122.8"
               src="https://ii3.pepperfry.com/assets/9f064768-808f-42a3-bc7b-f7923a750179.jpg"
-
               alt=""
             />
           </div>
@@ -118,8 +142,7 @@ const SofasAndSeatings = () => {
             max-width="100%"
           ></img>
         </div>
-        
-          
+
         <div className="fourthDiv" style={{ margin: "1cm" }}>
           <div>
             <h4
@@ -127,13 +150,25 @@ const SofasAndSeatings = () => {
               style={{ textAlign: "center", color: "brown", margin: "1cm" }}
             >
               Shop Best Sellers
-
             </h4>
           </div>
-          <div className="fourthdiv">
+          <div
+            id="fourthdiv"
+            className="row row-cols-1 row-cols-md-3 g-4"
+            style={{ justifyContent: "space-around" }}
+          >
             {filterVal.slice(0, 6).map((e) => (
-              <div>
-                <span className="border">
+              <div className="card" style={{ width: "18rem" }}>
+                <span>
+                  <div>
+                    <a onClick={() => addToWish(e)}>
+                      <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs88ap2H-nGBMBxIz9MaeWx8XvqmNYQrsinw&usqp=CAU"
+                        width="30x"
+                        height="30px"
+                      ></img>
+                    </a>
+                  </div>
                   <img
                     className="object-fit-sm-contain border rounded"
                     // className="rounded float-start"
@@ -144,19 +179,19 @@ const SofasAndSeatings = () => {
                     style={{ height: 230, width: 230 }}
                   />
                   <p>{e.title}</p>
-                  <p>Price: ${e.price}</p>
+                  <p>Price: Rs.{e.price}</p>
                   <div style={{ display: "flex" }}>
                     <button
                       type="button"
-                      className="btn btn-primary"
+                      className="btn btn-primary btn-sm btn-font-size-sm"
                       onClick={() => nav(e.id)}
                     >
                       Buy Now
                     </button>
                     <button
                       type="button"
-                      className="btn btn-primary"
-                      onClick={navcart}
+                      className="btn btn-primary btn-sm btn-font-size-sm"
+                      onClick={() => navcart(e)}
                     >
                       Add To Cart
                     </button>
@@ -171,20 +206,29 @@ const SofasAndSeatings = () => {
         </div>
         <div id="fifthDiv" style={{ margin: "1cm" }}>
           <div>
-
-      
             <h4
               id="frydeal"
-
-              style={{ textAlign: "center", color: "brown", margin: "1cm" }}>
-
+              style={{ textAlign: "center", color: "brown", margin: "1cm" }}
+            >
               Explore Most Wanted
             </h4>
           </div>
-          <div className="fifthdiv">
-
+          <div
+            id="fifthdiv"
+            className="row row-cols-1 row-cols-md-3 g-4"
+            style={{ justifyContent: "space-around" }}
+          >
             {filterVal.slice(7, 10).map((e) => (
-              <div>
+              <div className="card" style={{ width: "18rem" }}>
+                <div>
+                  <a onClick={() => addToWish(e)}>
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs88ap2H-nGBMBxIz9MaeWx8XvqmNYQrsinw&usqp=CAU"
+                      width="30x"
+                      height="30px"
+                    ></img>
+                  </a>
+                </div>
                 <img
                   // className="object-fit-sm-contain border rounded"
                   className="img-fluid"
@@ -194,41 +238,68 @@ const SofasAndSeatings = () => {
                   style={{ height: 230, width: 230 }}
                 />
                 <p>{e.title}</p>
-                <p>Price: ${e.price}</p>
-
-                {/* <p>Description: {e.description}</p> */}
-                {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}
-              </div>
-            ))}
-          </div>
-          <div className="fifthdiv">
-  
-            {filterVal.map((e) => (
-
-              <div>
-                <img
-                  // className="object-fit-sm-contain border rounded"
-                  className="img-fluid"
-                  id="fifthdivimg"
-                  src={e.image}
-                  alt={e.title}
-                  style={{ height: 230, width: 230 }}
-                />
-                <p>{e.title}</p>
-                <p>Price: ${e.price}</p>
-
+                <p>Price: Rs.{e.price}</p>
                 <div style={{ display: "flex" }}>
                   <button
                     type="button"
-                    className="btn btn-primary"
+                    className="btn btn-primary btn-sm btn-font-size-sm"
                     onClick={() => nav(e.id)}
                   >
                     Buy Now
                   </button>
                   <button
                     type="button"
-                    className="btn btn-primary"
-                    onClick={navcart}
+                    className="btn btn-primary btn-sm btn-font-size-sm"
+                    onClick={() => navcart(e)}
+                  >
+                    Add To Cart
+                  </button>
+                </div>
+
+                {/* <p>Description: {e.description}</p> */}
+                {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}
+              </div>
+            ))}
+          </div>
+          <div
+            id="fifthdiv"
+            className="row row-cols-1 row-cols-md-3 g-4"
+            style={{ justifyContent: "space-around" }}
+          >
+            {filterVal.map((e) => (
+              <div className="card" style={{ width: "18rem" }}>
+                <div>
+                  <a onClick={() => addToWish(e)}>
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs88ap2H-nGBMBxIz9MaeWx8XvqmNYQrsinw&usqp=CAU"
+                      width="30x"
+                      height="30px"
+                    ></img>
+                  </a>
+                </div>
+                <img
+                  // className="object-fit-sm-contain border rounded"
+                  className="img-fluid"
+                  id="fifthdivimg"
+                  src={e.image}
+                  alt={e.title}
+                  style={{ height: 230, width: 230 }}
+                />
+                <p>{e.title}</p>
+                <p>Price: Rs.{e.price}</p>
+
+                <div style={{ display: "flex" }}>
+                  <button
+                    type="button"
+                    className="btn btn-primary btn-sm btn-font-size-sm"
+                    onClick={() => nav(e.id)}
+                  >
+                    Buy Now
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-primary btn-sm btn-font-size-sm"
+                    onClick={() => navcart(e)}
                   >
                     Add To Cart
                   </button>
@@ -246,9 +317,22 @@ const SofasAndSeatings = () => {
               Discover Our Newest Arrivals
             </h3>
           </div>
-          <div className="seventhdiv">
+          <div
+            id="seventhdiv"
+            className="row row-cols-1 row-cols-md-3 g-4"
+            style={{ justifyContent: "space-around" }}
+          >
             {filterVal.slice(14, 18).map((e) => (
-              <div>
+              <div className="card" style={{ width: "18rem" }}>
+                <div>
+                  <a onClick={() => addToWish(e)}>
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs88ap2H-nGBMBxIz9MaeWx8XvqmNYQrsinw&usqp=CAU"
+                      width="30x"
+                      height="30px"
+                    ></img>
+                  </a>
+                </div>
                 <img
                   // className="object-fit-sm-contain border rounded"
                   className="img-fluid"
@@ -258,7 +342,23 @@ const SofasAndSeatings = () => {
                   style={{ height: 230, width: 230 }}
                 />
                 <p>{e.title}</p>
-                <p>Price: ${e.price}</p>
+                <p>Price: Rs.{e.price}</p>
+                <div style={{ display: "flex" }}>
+                  <button
+                    type="button"
+                    className="btn btn-primary btn-sm btn-font-size-sm"
+                    onClick={() => nav(e.id)}
+                  >
+                    Buy Now
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-primary btn-sm btn-font-size-sm"
+                    onClick={() => navcart(e)}
+                  >
+                    Add To Cart
+                  </button>
+                </div>
 
                 {/* <p>Description: {e.description}</p> */}
                 {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}
@@ -272,9 +372,22 @@ const SofasAndSeatings = () => {
               Explore Most Wanted
             </h4>
           </div>
-          <div className="eightthdiv">
+          <div
+            id="eightthdiv"
+            className="row row-cols-1 row-cols-md-3 g-4"
+            style={{ justifyContent: "space-around",margin:"1cm" }}
+          >
             {filterVal.slice(1, 4).map((e) => (
-              <div>
+              <div className="card" style={{ width: "18rem" }}>
+                <div>
+                  <a onClick={() => addToWish(e)}>
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs88ap2H-nGBMBxIz9MaeWx8XvqmNYQrsinw&usqp=CAU"
+                      width="30x"
+                      height="30px"
+                    ></img>
+                  </a>
+                </div>
                 <img
                   // className="object-fit-sm-contain border rounded"
                   className="img-fluid"
@@ -284,16 +397,45 @@ const SofasAndSeatings = () => {
                   style={{ height: 230, width: 230 }}
                 />
                 <p>{e.title}</p>
-                <p>Price: ${e.price}</p>
+                <p>Price: Rs.{e.price}</p>
+                <div style={{ display: "flex" }}>
+                  <button
+                    type="button"
+                    className="btn btn-primary btn-sm btn-font-size-sm"
+                    onClick={() => nav(e.id)}
+                  >
+                    Buy Now
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-primary btn-sm btn-font-size-sm"
+                    onClick={() => navcart(e)}
+                  >
+                    Add To Cart
+                  </button>
+                </div>
 
                 {/* <p>Description: {e.description}</p> */}
                 {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}
               </div>
             ))}
           </div>
-          <div className="eightthdiv">
+          <div
+            id="eightthdiv"
+            className="row row-cols-1 row-cols-md-3 g-4"
+            style={{ justifyContent: "space-around",margin:"1cm" }}
+          >
             {filterVal.slice(17, 20).map((e) => (
-              <div>
+              <div className="card" style={{ width: "18rem" }}>
+                <div>
+                  <a onClick={() => addToWish(e)}>
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs88ap2H-nGBMBxIz9MaeWx8XvqmNYQrsinw&usqp=CAU"
+                      width="30x"
+                      height="30px"
+                    ></img>
+                  </a>
+                </div>
                 <img
                   // className="object-fit-sm-contain border rounded"
                   className="img-fluid"
@@ -303,7 +445,23 @@ const SofasAndSeatings = () => {
                   style={{ height: 230, width: 230 }}
                 />
                 <p>{e.title}</p>
-                <p>Price: ${e.price}</p>
+                <p>Price: Rs.{e.price}</p>
+                <div style={{ display: "flex" }}>
+                  <button
+                    type="button"
+                    className="btn btn-primary btn-sm btn-font-size-sm"
+                    onClick={() => nav(e.id)}
+                  >
+                    Buy Now
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-primary btn-sm btn-font-size-sm"
+                    onClick={() => navcart(e)}
+                  >
+                    Add To Cart
+                  </button>
+                </div>
 
                 {/* <p>Description: {e.description}</p> */}
                 {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}
@@ -316,9 +474,22 @@ const SofasAndSeatings = () => {
             <h3 style={{ textAlign: "center", color: "brown" }}>
               Check Out These Collections
             </h3>
-            <div id="ninthdiv">
+            <div
+              id="ninthdiv"
+              className="row row-cols-1 row-cols-md-3 g-4"
+              style={{ justifyContent: "space-around" }}
+            >
               {filterVal.slice(5, 8).map((e) => (
-                <div>
+                <div className="card" style={{ width: "18rem" }}>
+                  <div>
+                    <a onClick={() => addToWish(e)}>
+                      <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs88ap2H-nGBMBxIz9MaeWx8XvqmNYQrsinw&usqp=CAU"
+                        width="30x"
+                        height="30px"
+                      ></img>
+                    </a>
+                  </div>
                   <img
                     // className="object-fit-sm-contain border rounded"
                     className="img-fluid"
@@ -328,7 +499,23 @@ const SofasAndSeatings = () => {
                     style={{ height: 230, width: 230 }}
                   />
                   <p>{e.title}</p>
-                  <p>Price: ${e.price}</p>
+                  <p>Price: Rs.{e.price}</p>
+                  <div style={{ display: "flex" }}>
+                    <button
+                      type="button"
+                      className="btn btn-primary btn-sm btn-font-size-sm"
+                      onClick={() => nav(e.id)}
+                    >
+                      Buy Now
+                    </button>
+                    <button
+                      type="button"
+                      className="btn btn-primary btn-sm btn-font-size-sm"
+                      onClick={() => navcart(e)}
+                    >
+                      Add To Cart
+                    </button>
+                  </div>
 
                   {/* <p>Description: {e.description}</p> */}
                   {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}
@@ -339,7 +526,7 @@ const SofasAndSeatings = () => {
         </div>
       </div>
     </>
-);
+  );
 };
 
 export default SofasAndSeatings;
