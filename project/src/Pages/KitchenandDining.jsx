@@ -1,6 +1,7 @@
 import React from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import SingleProdPage from "../componenet/SingleProdPage";
 
 const KitchenandDining = () => {
   const api = "http://localhost:3000/prods";
@@ -23,6 +24,13 @@ const KitchenandDining = () => {
     setFilterVal(category);
   }, [fetchedData]);
 
+  const navigate = useNavigate();
+  function nav(id) {
+    navigate(`/product/${id}`);
+  }
+  function navcart() {
+    navigate(`/product/${id}`);
+  }
   return (
     <>
       <meta charSet="UTF-8" />
@@ -98,6 +106,22 @@ const KitchenandDining = () => {
                   />
                   <p>{e.title}</p>
                   <p>Price: ${e.price}</p>
+                  <div style={{ display: "flex" }}>
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      onClick={() => nav(e.id)}
+                    >
+                      Buy Now
+                    </button>
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      onClick={navcart}
+                    >
+                      Add To Cart
+                    </button>
+                  </div>
                 </span>
 
                 {/* <p>Description: {e.description}</p> */}
@@ -120,6 +144,22 @@ const KitchenandDining = () => {
                 />
                 <p>{e.title}</p>
                 <p>Price: ${e.price}</p>
+                <div style={{ display: "flex" }}>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={() => nav(e.id)}
+                  >
+                    Buy Now
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={navcart}
+                  >
+                    Add To Cart
+                  </button>
+                </div>
 
                 {/* <p>Description: {e.description}</p> */}
                 {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}

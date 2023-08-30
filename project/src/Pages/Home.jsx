@@ -2,11 +2,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import {useState,useEffect} from "react";
 import "../Pages/home.css";
+import SingleProdPage from "../componenet/SingleProdPage";
 const Home = () => {
-  const nav = useNavigate();
-//   function onSubmit() {
-//     nav("/product");
-//   }
+  
+
     const api = "http://localhost:3000/prods";
     const [fetchedData, setfetchedData] = useState([]);
 
@@ -20,6 +19,11 @@ const Home = () => {
       fetchData();
     }, []);
 
+    // const nav = useNavigate();
+    
+    function nav(id) {
+      navigate(`/product/${id}`);
+    }
   return (
     <>
       <meta charSet="UTF-8" />
@@ -116,6 +120,22 @@ const Home = () => {
                   />
                   <p>{e.title}</p>
                   <p>Price: ${e.price}</p>
+                  <div style={{ display: "flex" }}>
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      onClick={() => nav(e.id)}
+                    >
+                      Buy Now
+                    </button>
+                    {/* <button
+                      type="button"
+                      className="btn btn-primary"
+                      onClick={navcart}
+                    >
+                      Add To Cart
+                    </button> */}
+                  </div>
                 </span>
 
                 {/* <p>Description: {e.description}</p> */}
@@ -148,6 +168,22 @@ const Home = () => {
                 />
                 <p>{e.title}</p>
                 <p>Price: ${e.price}</p>
+                <div style={{ display: "flex" }}>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={() => nav(e.id)}
+                  >
+                    Buy Now
+                  </button>
+                  {/* <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={navcart}
+                  >
+                    Add To Cart
+                  </button> */}
+                </div>
 
                 {/* <p>Description: {e.description}</p> */}
                 {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}
@@ -167,6 +203,22 @@ const Home = () => {
                 />
                 <p>{e.title}</p>
                 <p>Price: ${e.price}</p>
+                <div style={{ display: "flex" }}>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={() => nav(e.id)}
+                  >
+                    Buy Now
+                  </button>
+                  {/* <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={navcart}
+                  >
+                    Add To Cart
+                  </button> */}
+                </div>
 
                 {/* <p>Description: {e.description}</p> */}
                 {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}
@@ -195,6 +247,22 @@ const Home = () => {
                 />
                 <p>{e.title}</p>
                 <p>Price: ${e.price}</p>
+                <div style={{ display: "flex" }}>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={() => nav(e.id)}
+                  >
+                    Buy Now
+                  </button>
+                  {/* <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={navcart}
+                  >
+                    Add To Cart
+                  </button> */}
+                </div>
 
                 {/* <p>Description: {e.description}</p> */}
                 {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}
@@ -226,6 +294,22 @@ const Home = () => {
                 />
                 <p>{e.title}</p>
                 <p>Price: ${e.price}</p>
+                <div style={{ display: "flex" }}>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={() => nav(e.id)}
+                  >
+                    Buy Now
+                  </button>
+                  {/* <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={navcart}
+                  >
+                    Add To Cart
+                  </button> */}
+                </div>
 
                 {/* <p>Description: {e.description}</p> */}
                 {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}
@@ -245,6 +329,22 @@ const Home = () => {
                 />
                 <p>{e.title}</p>
                 <p>Price: ${e.price}</p>
+                <div style={{ display: "flex" }}>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={() => nav(e.id)}
+                  >
+                    Buy Now
+                  </button>
+                  {/* <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={navcart}
+                  >
+                    Add To Cart
+                  </button> */}
+                </div>
 
                 {/* <p>Description: {e.description}</p> */}
                 {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}
@@ -272,6 +372,22 @@ const Home = () => {
                   />
                   <p>{e.title}</p>
                   <p>Price: ${e.price}</p>
+                  <div style={{ display: "flex" }}>
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      onClick={() => nav(e.id)}
+                    >
+                      Buy Now
+                    </button>
+                    {/* <button
+                      type="button"
+                      className="btn btn-primary"
+                      onClick={navcart}
+                    >
+                      Add To Cart
+                    </button> */}
+                  </div>
 
                   {/* <p>Description: {e.description}</p> */}
                   {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}

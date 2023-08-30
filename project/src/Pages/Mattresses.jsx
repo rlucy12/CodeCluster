@@ -1,6 +1,7 @@
 import React from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import SingleProdPage from "../componenet/SingleProdPage";
 
 const Mattresses = () => {
   const api = "http://localhost:3000/prods";
@@ -23,6 +24,13 @@ const Mattresses = () => {
     setFilterVal(category);
   }, [fetchedData]);
 
+  const navigate = useNavigate();
+  function nav(id) {
+    navigate(`/product/${id}`);
+  }
+  function navcart() {
+    navigate(`/product/${id}`);
+  }
   return (
     <>
       <meta charSet="UTF-8" />
@@ -80,7 +88,7 @@ const Mattresses = () => {
               Explore Most Wanted
             </h4>
           </div>
-          <div className="fifthdiv" style={{display:"flex"}}>
+          <div className="fifthdiv" style={{ display: "flex" }}>
             {filterVal.slice(7, 10).map((e) => (
               <div>
                 <img
@@ -93,6 +101,22 @@ const Mattresses = () => {
                 />
                 <p>{e.title}</p>
                 <p>Price: ${e.price}</p>
+                <div style={{ display: "flex" }}>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={() => nav(e.id)}
+                  >
+                    Buy Now
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={navcart}
+                  >
+                    Add To Cart
+                  </button>
+                </div>
 
                 {/* <p>Description: {e.description}</p> */}
                 {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}
@@ -113,6 +137,22 @@ const Mattresses = () => {
               />
               <p>{e.title}</p>
               <p>Price: ${e.price}</p>
+              <div style={{ display: "flex" }}>
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={() => nav(e.id)}
+                >
+                  Buy Now
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={navcart}
+                >
+                  Add To Cart
+                </button>
+              </div>
 
               {/* <p>Description: {e.description}</p> */}
               {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}
