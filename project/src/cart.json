@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": 9,
+      "title": " Miranda Fabric 3 Seater Sofa In Ash Grey Colour",
+      "price": 40999,
+      "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
+      "category": "Sofas And Seatings",
+      "image": " https://ii3.pepperfry.com/media/catalog/product/m/i/1250x625/miranda-fabric-3-seater-sofa-in-ash-grey-colour-miranda-fabric-3-seater-sofa-in-ash-grey-colour-mtp58a.jpg ",
+      "rating": {
+        "rate": 3.3,
+        "count": 203
+      }
+    },
+    {
+      "id": 112,
+      "title": "ProActiv Jump 6 inch Bonnell Spring Single Mattress",
+      "price": 11465,
+      "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
+      "category": "Mattresses",
+      "image": "https://ii2.pepperfry.com/media/catalog/product/p/r/1100x1210/proactiv-jump-6-inches-single-size-bonnell-spring---hr-foam-mattress-by-springfit-proactiv-jump-6-in-ht2cmm.jpg",
+      "rating": {
+        "rate": 3.8,
+        "count": 679
+      }
+    },
+    {
+      "id": 8,
+      "title": "Andres Fabric 3 Seater Sofa In Green Colour",
+      "price": 37999,
+      "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
+      "category": "Sofas And Seatings",
+      "image": "https://ii2.pepperfry.com/media/catalog/product/a/n/1250x625/andres-3-seater-sofa-in-green-colour-by-woodsworth-andres-3-seater-sofa-in-green-colour-by-woodswort-5oyjry.jpg",
+      "rating": {
+        "rate": 1.9,
+        "count": 100
+      }
+    }
+  ]
+}

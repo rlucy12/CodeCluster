@@ -28,8 +28,39 @@ const KitchenandDining = () => {
   function nav(id) {
     navigate(`/product/${id}`);
   }
-  function navcart() {
-    navigate(`/product/${id}`);
+  
+  function navcart(product) {
+    fetch("http://localhost:4000/posts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(product),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Product added to cart:", data);
+      })
+      .catch((error) => {
+        console.error("Error adding product to cart:", error);
+      });
+  }
+
+  function addToWish(product) {
+    fetch("http://localhost:5000/wish", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(product),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Product added to cart:", data);
+      })
+      .catch((error) => {
+        console.error("Error adding product to cart:", error);
+      });
   }
   return (
     <>
@@ -43,7 +74,7 @@ const KitchenandDining = () => {
             loading="eager"
             height={550}
             width="auto"
-            src="https://ii1.pepperfry.com/assets/4d2d41f4-e6f9-4089-a7bf-34095f6db565.jpg"
+            src="https://ii2.pepperfry.com/assets/13df3f0c-6b0a-4979-aa59-68ed74d08ba8.jpg"
             alt="image alt image"
           />
         </div>
@@ -68,7 +99,7 @@ const KitchenandDining = () => {
               className="img-fluid"
               // width={458}
               height="122.8"
-              src="https://ii3.pepperfry.com/assets/9aa00aeb-1854-4f12-8c95-e5a604861a9a.jpg"
+              src="https://ii3.pepperfry.com/assets/24c94294-95b0-4837-a82e-9019cf3cd96e.jpg"
               alt=""
             />
           </div>
@@ -77,7 +108,7 @@ const KitchenandDining = () => {
               className="img-fluid"
               // width={458}
               height="122.8"
-              src="https://ii1.pepperfry.com/assets/f9066b49-b0a5-4cec-9675-6c36a8e3b8cc.jpg"
+              src="https://ii3.pepperfry.com/assets/6a46dc94-85d0-401c-8bfb-c94196e49586.jpg"
               alt=""
             />
           </div>
@@ -91,9 +122,13 @@ const KitchenandDining = () => {
               Shop Best Sellers
             </h4>
           </div>
-          <div className="fourthdiv">
+          <div
+            id="fourthdiv"
+            className="row row-cols-1 row-cols-md-3 g-4"
+            style={{ justifyContent: "space-around" }}
+          >
             {filterVal.slice(0, 6).map((e) => (
-              <div>
+              <div className="card" style={{ width: "18rem" }}>
                 <span className="border">
                   <img
                     className="object-fit-sm-contain border rounded"
@@ -105,19 +140,19 @@ const KitchenandDining = () => {
                     style={{ height: 230, width: 230 }}
                   />
                   <p>{e.title}</p>
-                  <p>Price: ${e.price}</p>
+                  <p>Price: Rs.{e.price}</p>
                   <div style={{ display: "flex" }}>
                     <button
                       type="button"
-                      className="btn btn-primary"
+                      className="btn btn-primary btn-sm btn-font-size-sm"
                       onClick={() => nav(e.id)}
                     >
                       Buy Now
                     </button>
                     <button
                       type="button"
-                      className="btn btn-primary"
-                      onClick={navcart}
+                      className="btn btn-primary btn-sm btn-font-size-sm"
+                      onClick={() => navcart(e)}
                     >
                       Add To Cart
                     </button>
@@ -131,9 +166,12 @@ const KitchenandDining = () => {
           </div>
         </div>
         <div id="seventhDiv">
-          <div>
+          <div
+            className="row row-cols-1 row-cols-md-3 g-4"
+            style={{ justifyContent: "space-around" }}
+          >
             {filterVal.map((e) => (
-              <div>
+              <div className="card" style={{ width: "18rem" }}>
                 <img
                   // className="object-fit-sm-contain border rounded"
                   className="img-fluid"
@@ -143,19 +181,19 @@ const KitchenandDining = () => {
                   style={{ height: 230, width: 230 }}
                 />
                 <p>{e.title}</p>
-                <p>Price: ${e.price}</p>
+                <p>Price: Rs.{e.price}</p>
                 <div style={{ display: "flex" }}>
                   <button
                     type="button"
-                    className="btn btn-primary"
+                    className="btn btn-primary btn-sm btn-font-size-sm"
                     onClick={() => nav(e.id)}
                   >
                     Buy Now
                   </button>
                   <button
                     type="button"
-                    className="btn btn-primary"
-                    onClick={navcart}
+                    className="btn btn-primary btn-sm btn-font-size-sm"
+                    onClick={() => navcart(e)}
                   >
                     Add To Cart
                   </button>
