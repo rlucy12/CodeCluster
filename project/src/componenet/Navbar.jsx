@@ -59,56 +59,58 @@ const NavigationBar = () => {
           <li>GIFT CARD</li>
           <li>CONTACT US</li> */}
       </ul>
-      
-        <div className="navbar1">
-          <ul className="nav-links">
-            <li>SELL ON PEPPERFRY</li>
-            <li>BECOME A FRANCHISEE</li>
-            <li>BUY IN BULK</li>
-            <li>FIND A STUDIO</li>
-            <li>GIFT CARD</li>
-            <li>GET INSPIRED</li>
-            <li>TRACK YOUR ORDER</li>
-            <li><a onClick={() => nav("/contactus")}>CONTACT US</a></li>
-          </ul>
-        </div>
-        <div className="subnavbar">
-          <ul className="subnav-links">
-            <li class="nav-item">
-              <a onClick={() => nav("/furniture")}>Furniture</a>
-            </li>
-            <li>
-              <a onClick={() => nav("/sofasAndSeatings")}>Sofas & Seating</a>
-            </li>
-            <li>
-              <a onClick={() => nav("/mattresses")}>Mattresses</a>
-            </li>
-            <li>
-              <a onClick={() => nav("/homeDecor")}>Home Decor</a>
-            </li>
-            <li>
-              <a onClick={() => nav("/furnishing")}>Furnishing</a>
-            </li>
-            <li>
-              <a onClick={() => nav("/KitchenandDining")}>Kitchen & Dining</a>
-            </li>
-            <li>
-              <a onClick={() => nav("/lampsandLighting")}>Lamps & Lighting</a>
-            </li>
-            <li>
-              <a onClick={() => nav("/homeUtility")}>Home Utility</a>
-            </li>
-            <li>
-              <a onClick={() => nav("/appliances")}>Appliances</a>
-            </li>
-            <li>
-              <a onClick={() => nav("/modular")}>Modular</a>
-            </li>
-          </ul>
-        </div>
 
+      <div className="navbar1">
+        <ul className="nav-links">
+          <li>
+            <a onClick={() => nav("/seller")}>SELL ON PEPPERFRY</a>
+          </li>
+          <li>BECOME A FRANCHISEE</li>
+          <li>BUY IN BULK</li>
+          <li>FIND A STUDIO</li>
+          <li>GIFT CARD</li>
+          <li>GET INSPIRED</li>
+          <li>TRACK YOUR ORDER</li>
+          <li>
+            <a onClick={() => nav("/contactus")}>CONTACT US</a>
+          </li>
+        </ul>
       </div>
-    
+      <div className="subnavbar">
+        <ul className="subnav-links">
+          <li class="nav-item">
+            <a onClick={() => nav("/furniture")}>Furniture</a>
+          </li>
+          <li>
+            <a onClick={() => nav("/sofasAndSeatings")}>Sofas & Seating</a>
+          </li>
+          <li>
+            <a onClick={() => nav("/mattresses")}>Mattresses</a>
+          </li>
+          <li>
+            <a onClick={() => nav("/homeDecor")}>Home Decor</a>
+          </li>
+          <li>
+            <a onClick={() => nav("/furnishing")}>Furnishing</a>
+          </li>
+          <li>
+            <a onClick={() => nav("/KitchenandDining")}>Kitchen & Dining</a>
+          </li>
+          <li>
+            <a onClick={() => nav("/lampsandLighting")}>Lamps & Lighting</a>
+          </li>
+          <li>
+            <a onClick={() => nav("/homeUtility")}>Home Utility</a>
+          </li>
+          <li>
+            <a onClick={() => nav("/appliances")}>Appliances</a>
+          </li>
+          <li>
+            <a onClick={() => nav("/modular")}>Modular</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   );
 };
 

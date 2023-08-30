@@ -1,0 +1,19 @@
+{
+  "seller": [
+    {
+      "name": "Rajashree",
+      "email": "dvsnkj@gmail.com",
+      "password": "Lucy",
+      "cpassword": "Lucy",
+      "mno": "46526",
+      "pcode": "86546584",
+      "city": "Puri",
+      "state": "Odisha",
+      "cname": "",
+      "address": "",
+      "gst": "6+5589+",
+      "cat": "",
+      "id": 1
+    }
+  ]
+}
