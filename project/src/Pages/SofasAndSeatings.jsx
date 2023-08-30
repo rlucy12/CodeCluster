@@ -1,6 +1,7 @@
 import React from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import SingleProdPage from "../componenet/SingleProdPage";
 
 const SofasAndSeatings = () => {
   const api = "http://localhost:3000/prods";
@@ -22,7 +23,14 @@ const SofasAndSeatings = () => {
       );
       setFilterVal(category);
     }, [fetchedData]);
+    const navigate = useNavigate();
+    function nav(id) {
+      navigate(`/product/${id}`);
+    }
 
+    function navcart() {
+      navigate(`/product/${id}`);
+    }
 
   return (
     <>
@@ -79,7 +87,8 @@ const SofasAndSeatings = () => {
           <div>
             <h4
               id="frydeal"
-              style={{ textAlign: "center", color: "brown", margin: "1cm" }}>
+              style={{ textAlign: "center", color: "brown", margin: "1cm" }}
+            >
               Shop Best Sellers
             </h4>
           </div>
@@ -98,6 +107,22 @@ const SofasAndSeatings = () => {
                   />
                   <p>{e.title}</p>
                   <p>Price: ${e.price}</p>
+                  <div style={{ display: "flex" }}>
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      onClick={() => nav(e.id)}
+                    >
+                      Buy Now
+                    </button>
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      onClick={navcart}
+                    >
+                      Add To Cart
+                    </button>
+                  </div>
                 </span>
 
                 {/* <p>Description: {e.description}</p> */}
@@ -110,7 +135,8 @@ const SofasAndSeatings = () => {
           <div>
             <h4
               id="frydeal"
-              style={{ textAlign: "center", color: "brown", margin: "1cm" }}>
+              style={{ textAlign: "center", color: "brown", margin: "1cm" }}
+            >
               Explore Most Wanted
             </h4>
           </div>
@@ -128,6 +154,22 @@ const SofasAndSeatings = () => {
                 <p>{e.title}</p>
                 <p>Price: ${e.price}</p>
 
+                <div style={{ display: "flex" }}>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={() => nav(e.id)}
+                  >
+                    Buy Now
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={navcart}
+                  >
+                    Add To Cart
+                  </button>
+                </div>
                 {/* <p>Description: {e.description}</p> */}
                 {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}
               </div>

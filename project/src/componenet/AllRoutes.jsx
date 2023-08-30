@@ -10,13 +10,14 @@ import Furnishing from "../Pages/Furnishing";
 import LampsandLighting from "../Pages/LampsandLighting";
 import Modular from "../Pages/Modular";
 import Furniture from "../Pages/Furniture";
+import SingleProdPage from "./SingleProdPage";
 // import Product from "../pages/Product";
 // import SingleProdPage from "./singleProdPage";
 const AllRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />}></Route>
-      <Route path="/furniture" element={<Furniture/>}></Route>
+      <Route path="/furniture" element={<Furniture />}></Route>
       <Route path="/sofasAndSeatings" element={<SofasAndSeatings />}></Route>
       <Route path="/mattresses" element={<Mattresses />}></Route>
       <Route path="/homeDecor" element={<HomeDecor />}></Route>
@@ -26,6 +27,7 @@ const AllRoutes = () => {
       <Route path="/appliances" element={<Appliances />}></Route>
       <Route path="/HomeUtility" element={<HomeUtility />}></Route>
       <Route path="/modular" element={<Modular />}></Route>
+      <Route path="/product/:id" element={<SingleProdPage />} />
     </Routes>
   );
 };
