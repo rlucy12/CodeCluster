@@ -1,5 +1,10 @@
 import { Route,Routes } from "react-router-dom";
 import Home from "../Pages/Home";
+
+import Register from "./Registration";
+import Login from "./Login";
+import Contactus from "./Contactus";
+import NavigationBar from "./Navbar";
 import SofasAndSeatings from "../Pages/SofasAndSeatings"
 import Mattresses from "../Pages/Mattresses";
 import KitchenandDining from "../Pages/KitchenandDining";
@@ -15,6 +20,16 @@ import Furniture from "../Pages/Furniture";
 const AllRoutes = () => {
   return (
     <Routes>
+  
+      <Route path="/" element={<Home />}>
+        Home Page
+      </Route>
+      <Route path="/navbar" element={<NavigationBar/>}></Route>
+      <Route path="/registration" element={<Register />}>
+        Register
+      </Route>
+      <Route path="/login" element={<Login />}></Route>
+      <Route path="/contactus" element={<Contactus />}></Route>
       <Route path="/" element={<Home />}></Route>
       <Route path="/furniture" element={<Furniture/>}></Route>
       <Route path="/sofasAndSeatings" element={<SofasAndSeatings />}></Route>
@@ -26,6 +41,7 @@ const AllRoutes = () => {
       <Route path="/appliances" element={<Appliances />}></Route>
       <Route path="/HomeUtility" element={<HomeUtility />}></Route>
       <Route path="/modular" element={<Modular />}></Route>
+
     </Routes>
   );
 };
