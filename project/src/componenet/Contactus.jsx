@@ -1,4 +1,4 @@
-
+import '../componenet/contact.css'
 import { useState } from "react";
 
 const Contactus = () => { 
@@ -23,23 +23,23 @@ const Contactus = () => {
           });
     }
   return (
-    <div>
+    <div className="one">
       <form onSubmit={handlsubmit}>
-        <label>Email</label>{" "}
+        <label>Email</label>{" "}<br></br>
         <input
           type="email"
           value={email}
           onChange={(e) => emailchange(e.target.value)}
         />
         <br></br>
-        <label>Comment</label>{" "}
+        <label>Comment</label>{" "}<br></br>
         <input
           type="textarea"
           value={comment}
           onChange={(e) => commentchange(e.target.value)}
-        />
+        /> <br></br> <br></br>
         <button type="submit" className="btn btn-primary">
-          Comment
+          Post
         </button>
       </form>
     </div>
