@@ -1,0 +1,12 @@
+.div{
+    display:flex;
+    flex-wrap: wrap;
+}
+.one{
+    height: auto;
+    width: 350px;
+}
+/* .two {
+    height: auto;
+    width: 350px;
+} */
