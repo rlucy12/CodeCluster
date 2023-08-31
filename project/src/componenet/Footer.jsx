@@ -20,22 +20,22 @@ const Footer = () => {
                     <h5 className="text-uppercase">Corporate</h5>
                     <ul className="list-unstyled mb-0">
                       <li>
-                        <a href="#!" className="text-white">
+                        <a href="https://www.pepperfry.ltd/" className="text-white">
                           About Us
                         </a>
                       </li>
                       <li>
-                        <a href="#!" className="text-white">
+                        <a href="https://www.pepperfry.ltd/investor-relations/" className="text-white">
                           Corporate Governance
                         </a>
                       </li>
                       <li>
-                        <a href="#!" className="text-white">
+                        <a href="https://www.pepperfry.ltd/" className="text-white">
                           Papperfry in the News
                         </a>
                       </li>
                       <li>
-                        <a href="#!" className="text-white">
+                        <a href="https://www.pepperfry.com/pages/careers.html?type=footer" className="text-white">
                           Careers
                         </a>
                       </li>
@@ -47,27 +47,27 @@ const Footer = () => {
                     <h5 className="text-uppercase">Useful Links</h5>
                     <ul className="list-unstyled mb-0">
                       <li>
-                        <a href="#!" className="text-white">
+                        <a href="https://www.pepperfry.com/form/pepperfry-gift-cards.html?type=footer" className="text-white">
                           Explore Gift Cards
                         </a>
                       </li>
                       <li>
-                        <a href="#!" className="text-white">
+                        <a href="https://www.pepperfry.com/form/partners-bulkorder.html?type=footer" className="text-white">
                           Buy in Bulk
                         </a>
                       </li>
                       <li>
-                        <a href="#!" className="text-white">
+                        <a href="https://www.pepperfry.com/pages/brands.html?type=footer" className="text-white">
                           Discover Our Brands
                         </a>
                       </li>
                       <li>
-                        <a href="#!" className="text-white">
+                        <a href="https://blog.pepperfry.com" className="text-white">
                           Check Out Bonhomie, Our Blog
                         </a>
                       </li>
                       <li>
-                        <a href="#!" className="text-white">
+                        <a href="https://studios.pepperfry.com" className="text-white">
                           Find a Studio
                         </a>
                       </li>
@@ -79,32 +79,32 @@ const Footer = () => {
                     <h5 className="text-uppercase">Partner With Us</h5>
                     <ul className="list-unstyled mb-0">
                       <li>
-                        <a href="#!" className="text-white">
+                        <a href="https://www.pepperfry.com/form/partners-partnerwithus.html" className="text-white">
                           Sell on Papperfry
                         </a>
                       </li>
                       <li>
-                        <a href="#!" className="text-white">
+                        <a href="https://www.pepperfry.com/form/partners-franchisee.html" className="text-white">
                           Become a Franchisee
                         </a>
                       </li>
                       <li>
-                        <a href="#!" className="text-white">
+                        <a href="https://www.pepperfry.com/form/partners-channelpartner.html" className="text-white">
                           Become our Channel Partner
                         </a>
                       </li>
                       <li>
-                        <a href="#!" className="text-white">
+                        <a href="https://www.pepperfry.com/form/partners-pephomie.html" className="text-white">
                           Become Our Pep Homie
                         </a>
                       </li>
                       <li>
-                        <a href="#!" className="text-white">
+                        <a href="https://www.pepperfry.com/tnc/marketplace_policies.html" className="text-white">
                           Our Marketplace Policies
                         </a>
                       </li>
                       <li>
-                        <a href="#!" className="text-white">
+                        <a href="https://seller.pepperfry.com/merchant/login" className="text-white">
                           Merchant Dashboard Login
                         </a>
                       </li>
@@ -116,17 +116,17 @@ const Footer = () => {
                     <h5 className="text-uppercase">Need Help ?</h5>
                     <ul className="list-unstyled mb-0">
                       <li>
-                        <a href="#!" className="text-white">
+                        <a href="https://www.pepperfry.com/customer/needhelp/faq" className="text-white">
                           FAQs
                         </a>
                       </li>
                       <li>
-                        <a href="#!" className="text-white">
+                        <a href="https://www.pepperfry.com/customer/needhelp/policies" className="text-white">
                           Policies
                         </a>
                       </li>
                       <li>
-                        <a href="#!" className="text-white">
+                        <a href="https://www.pepperfry.com/customer/needhelp/contactus" className="text-white">
                           Contact Us
                         </a>
                       </li>
