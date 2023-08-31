@@ -150,8 +150,13 @@ const Furnishing= () => {
                   <div style={{ display: "flex" }}>
                     <button
                       type="button"
-                      className="btn btn-primary btn-sm btn-font-size-sm"
+                      className="btn btn-outline-info btn-sm btn-font-size-sm"
                       onClick={() => nav(e.id)}
+                      style={{
+                        color: "#F94C10",
+                        borderColor: "#F94C10",
+                        marginRight: "1cm",
+                      }}
                     >
                       Buy Now
                     </button>
@@ -159,9 +164,44 @@ const Furnishing= () => {
                       type="button"
                       className="btn btn-primary btn-sm btn-font-size-sm"
                       onClick={() => navcart(e)}
+                      style={{
+                        backgroundColor: "#F94C10",
+                        borderColor: "#F94C10",
+                      }}
                     >
                       Add To Cart
                     </button>
+                  </div>
+                  <div
+                    class="modal fade"
+                    id="exampleModal"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div
+                      class="modal-dialog"
+                      style={{
+                        width: "200px",
+                        backgroundColor: "black",
+                        color: "#9D44C0",
+                        fontSize: "20px",
+                      }}
+                    >
+                      <div class="modal-content">
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                          style={{ marginLeft: "170px", height: "20px" }}
+                        ></button>
+
+                        <div class="modal-body" style={{ fontWeight: "bold" }}>
+                          Added To Cart
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </span>
 
@@ -201,8 +241,13 @@ const Furnishing= () => {
                 <div style={{ display: "flex" }}>
                   <button
                     type="button"
-                    className="btn btn-primary btn-sm btn-font-size-sm"
+                    className="btn btn-outline-info btn-sm btn-font-size-sm"
                     onClick={() => nav(e.id)}
+                    style={{
+                      color: "#F94C10",
+                      borderColor: "#F94C10",
+                      marginRight: "1cm",
+                    }}
                   >
                     Buy Now
                   </button>
@@ -210,13 +255,45 @@ const Furnishing= () => {
                     type="button"
                     className="btn btn-primary btn-sm btn-font-size-sm"
                     onClick={() => navcart(e)}
+                    style={{
+                      backgroundColor: "#F94C10",
+                      borderColor: "#F94C10",
+                    }}
                   >
                     Add To Cart
                   </button>
                 </div>
+                <div
+                  className="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div
+                    className="modal-dialog"
+                    style={{
+                      width: "200px",
+                      backgroundColor: "black",
+                      color: "#9D44C0",
+                      fontSize: "20px",
+                    }}
+                  >
+                    <div className="modal-content">
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                        style={{ marginLeft: "170px", height: "20px" }}
+                      ></button>
 
-                {/* <p>Description: {e.description}</p> */}
-                {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}
+                      <div className="modal-body" style={{ fontWeight: "bold" }}>
+                        Added To Cart
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

@@ -23,7 +23,7 @@ const Seller = () => {
       e.preventDefault();
       let regob = { name, email, password,cpassword,mno,pcode,city,state,cname,address,gst,cat };
       // console.log(regobj);
-      fetch("http://localhost:8000/seller", {
+      fetch("http://localhost:9000/seller", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(regob),

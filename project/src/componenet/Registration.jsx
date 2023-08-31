@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import "../componenet/Seller.css";
 const Register = () => {
     const [id,idchange] = useState("");
     const [name, namechange] = useState("");
@@ -40,7 +40,9 @@ const Register = () => {
                   <div className="col-lg-6">
                     <div className="form-group">
                       <label>User Name</label>
+                      <br></br>
                       <input
+                        className="inpu"
                         type="text"
                         required
                         va
@@ -48,8 +50,9 @@ const Register = () => {
                         onChange={(e) => idchange(e.target.value)}
                       />
                       <br></br>
-                      <label>Name</label>{" "}
+                      <label>Name</label> <br></br>
                       <input
+                        className="inpu"
                         type="text"
                         required
                         va
@@ -57,21 +60,24 @@ const Register = () => {
                         onChange={(e) => namechange(e.target.value)}
                       />
                       <br></br>
-                      <label> Email </label>{" "}
+                      <label> Email </label> <br></br>
                       <input
+                        className="inpu"
                         type="email"
                         required
                         value={email}
                         onChange={(e) => emailchange(e.target.value)}
                       />
                       <br></br>
-                      <label>Password</label>{" "}
+                      <label>Password</label> <br></br>
                       <input
+                        className="inpu"
                         type="password"
                         required
                         value={password}
                         onChange={(e) => passwordchange(e.target.value)}
                       />
+                      <br></br>
                       {/* <br></br>
                       <label>User Type</label>
                       <select>

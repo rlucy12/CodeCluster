@@ -143,7 +143,7 @@ const Home = () => {
           >
             {fetchedData.slice(0, 6).map((e) => (
               <div className="card" style={{ width: "18rem" }}>
-                <span >
+                <span>
                   <div>
                     <a onClick={() => addToWish(e)}>
                       <img
@@ -167,8 +167,13 @@ const Home = () => {
                   <div style={{ display: "flex" }}>
                     <button
                       type="button"
-                      className="btn btn-primary btn-sm btn-font-size-sm"
+                      className="btn btn-outline-info btn-sm btn-font-size-sm"
                       onClick={() => nav(e.id)}
+                      style={{
+                        color: "#F94C10",
+                        borderColor: "#F94C10",
+                        marginRight: "1cm",
+                      }}
                     >
                       Buy Now
                     </button>
@@ -176,9 +181,44 @@ const Home = () => {
                       type="button"
                       className="btn btn-primary btn-sm btn-font-size-sm"
                       onClick={() => navcart(e)}
+                      style={{
+                        backgroundColor: "#F94C10",
+                        borderColor: "#F94C10",
+                      }}
                     >
                       Add To Cart
                     </button>
+                  </div>
+                  <div
+                    class="modal fade"
+                    id="exampleModal"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div
+                      class="modal-dialog"
+                      style={{
+                        width: "200px",
+                        backgroundColor: "black",
+                        color: "#9D44C0",
+                        fontSize: "20px",
+                      }}
+                    >
+                      <div class="modal-content">
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                          style={{ marginLeft: "170px", height: "20px" }}
+                        ></button>
+
+                        <div class="modal-body" style={{ fontWeight: "bold" }}>
+                          Added To Cart
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </span>
 
@@ -200,7 +240,7 @@ const Home = () => {
           <div
             id="fifthdiv"
             className="row row-cols-1 row-cols-md-3 g-4"
-            style={{ justifyContent: "space-around" ,margin:"1cm"}}
+            style={{ justifyContent: "space-around", margin: "1cm" }}
           >
             {fetchedData.slice(7, 10).map((e) => (
               <div className="card" style={{ width: "18rem" }}>
@@ -227,8 +267,13 @@ const Home = () => {
                 <div style={{ display: "flex" }}>
                   <button
                     type="button"
-                    className="btn btn-primary btn-sm btn-font-size-sm"
+                    className="btn btn-outline-info btn-sm btn-font-size-sm"
                     onClick={() => nav(e.id)}
+                    style={{
+                      color: "#F94C10",
+                      borderColor: "#F94C10",
+                      marginRight: "1cm",
+                    }}
                   >
                     Buy Now
                   </button>
@@ -236,13 +281,46 @@ const Home = () => {
                     type="button"
                     className="btn btn-primary btn-sm btn-font-size-sm"
                     onClick={() => navcart(e)}
+                    style={{
+                      backgroundColor: "#F94C10",
+                      borderColor: "#F94C10",
+                    }}
                   >
                     Add To Cart
                   </button>
                 </div>
 
-                {/* <p>Description: {e.description}</p> */}
-                {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}
+                <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div
+                    class="modal-dialog"
+                    style={{
+                      width: "200px",
+                      backgroundColor: "black",
+                      color: "#9D44C0",
+                      fontSize: "20px",
+                    }}
+                  >
+                    <div class="modal-content">
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                        style={{ marginLeft: "170px", height: "20px" }}
+                      ></button>
+
+                      <div class="modal-body" style={{ fontWeight: "bold" }}>
+                        Added To Cart
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -275,8 +353,13 @@ const Home = () => {
                 <div style={{ display: "flex" }}>
                   <button
                     type="button"
-                    className="btn btn-primary btn-sm btn-font-size-sm"
+                    className="btn btn-outline-info btn-sm btn-font-size-sm"
                     onClick={() => nav(e.id)}
+                    style={{
+                      color: "#F94C10",
+                      borderColor: "#F94C10",
+                      marginRight: "1cm",
+                    }}
                   >
                     Buy Now
                   </button>
@@ -284,13 +367,46 @@ const Home = () => {
                     type="button"
                     className="btn btn-primary btn-sm btn-font-size-sm"
                     onClick={() => navcart(e)}
+                    style={{
+                      backgroundColor: "#F94C10",
+                      borderColor: "#F94C10",
+                    }}
                   >
                     Add To Cart
                   </button>
                 </div>
 
-                {/* <p>Description: {e.description}</p> */}
-                {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}
+                <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div
+                    class="modal-dialog"
+                    style={{
+                      width: "200px",
+                      backgroundColor: "black",
+                      color: "#9D44C0",
+                      fontSize: "20px",
+                    }}
+                  >
+                    <div class="modal-content">
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                        style={{ marginLeft: "170px", height: "20px" }}
+                      ></button>
+
+                      <div class="modal-body" style={{ fontWeight: "bold" }}>
+                        Added To Cart
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -330,8 +446,13 @@ const Home = () => {
                 <div style={{ display: "flex" }}>
                   <button
                     type="button"
-                    className="btn btn-primary btn-sm btn-font-size-sm"
+                    className="btn btn-outline-info btn-sm btn-font-size-sm"
                     onClick={() => nav(e.id)}
+                    style={{
+                      color: "#F94C10",
+                      borderColor: "#F94C10",
+                      marginRight: "1cm",
+                    }}
                   >
                     Buy Now
                   </button>
@@ -339,13 +460,45 @@ const Home = () => {
                     type="button"
                     className="btn btn-primary btn-sm btn-font-size-sm"
                     onClick={() => navcart(e)}
+                    style={{
+                      backgroundColor: "#F94C10",
+                      borderColor: "#F94C10",
+                    }}
                   >
                     Add To Cart
                   </button>
                 </div>
+                <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div
+                    class="modal-dialog"
+                    style={{
+                      width: "200px",
+                      backgroundColor: "black",
+                      color: "#9D44C0",
+                      fontSize: "20px",
+                    }}
+                  >
+                    <div class="modal-content">
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                        style={{ marginLeft: "170px", height: "20px" }}
+                      ></button>
 
-                {/* <p>Description: {e.description}</p> */}
-                {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}
+                      <div class="modal-body" style={{ fontWeight: "bold" }}>
+                        Added To Cart
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -362,7 +515,7 @@ const Home = () => {
           <div
             id="eightthdiv"
             className="row row-cols-1 row-cols-md-3 g-4"
-            style={{ justifyContent: "space-around",margin:"1cm" }}
+            style={{ justifyContent: "space-around", margin: "1cm" }}
           >
             {fetchedData.slice(1, 4).map((e) => (
               <div className="card" style={{ width: "18rem" }}>
@@ -388,8 +541,13 @@ const Home = () => {
                 <div style={{ display: "flex" }}>
                   <button
                     type="button"
-                    className="btn btn-primary btn-sm btn-font-size-sm"
+                    className="btn btn-outline-info btn-sm btn-font-size-sm"
                     onClick={() => nav(e.id)}
+                    style={{
+                      color: "#F94C10",
+                      borderColor: "#F94C10",
+                      marginRight: "1cm",
+                    }}
                   >
                     Buy Now
                   </button>
@@ -397,13 +555,46 @@ const Home = () => {
                     type="button"
                     className="btn btn-primary btn-sm btn-font-size-sm"
                     onClick={() => navcart(e)}
+                    style={{
+                      backgroundColor: "#F94C10",
+                      borderColor: "#F94C10",
+                    }}
                   >
                     Add To Cart
                   </button>
                 </div>
 
-                {/* <p>Description: {e.description}</p> */}
-                {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}
+                <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div
+                    class="modal-dialog"
+                    style={{
+                      width: "200px",
+                      backgroundColor: "black",
+                      color: "#9D44C0",
+                      fontSize: "20px",
+                    }}
+                  >
+                    <div class="modal-content">
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                        style={{ marginLeft: "170px", height: "20px" }}
+                      ></button>
+
+                      <div class="modal-body" style={{ fontWeight: "bold" }}>
+                        Added To Cart
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -436,8 +627,13 @@ const Home = () => {
                 <div style={{ display: "flex" }}>
                   <button
                     type="button"
-                    className="btn btn-primary btn-sm btn-font-size-sm"
+                    className="btn btn-outline-info btn-sm btn-font-size-sm"
                     onClick={() => nav(e.id)}
+                    style={{
+                      color: "#F94C10",
+                      borderColor: "#F94C10",
+                      marginRight: "1cm",
+                    }}
                   >
                     Buy Now
                   </button>
@@ -445,13 +641,46 @@ const Home = () => {
                     type="button"
                     className="btn btn-primary btn-sm btn-font-size-sm"
                     onClick={() => navcart(e)}
+                    style={{
+                      backgroundColor: "#F94C10",
+                      borderColor: "#F94C10",
+                    }}
                   >
                     Add To Cart
                   </button>
                 </div>
 
-                {/* <p>Description: {e.description}</p> */}
-                {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}
+                <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div
+                    class="modal-dialog"
+                    style={{
+                      width: "200px",
+                      backgroundColor: "black",
+                      color: "#9D44C0",
+                      fontSize: "20px",
+                    }}
+                  >
+                    <div class="modal-content">
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                        style={{ marginLeft: "170px", height: "20px" }}
+                      ></button>
+
+                      <div class="modal-body" style={{ fontWeight: "bold" }}>
+                        Added To Cart
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -490,8 +719,13 @@ const Home = () => {
                   <div style={{ display: "flex" }}>
                     <button
                       type="button"
-                      className="btn btn-primary btn-sm btn-font-size-sm"
+                      className="btn btn-outline-info btn-sm btn-font-size-sm"
                       onClick={() => nav(e.id)}
+                      style={{
+                        color: "#F94C10",
+                        borderColor: "#F94C10",
+                        marginRight: "1cm",
+                      }}
                     >
                       Buy Now
                     </button>
@@ -499,13 +733,46 @@ const Home = () => {
                       type="button"
                       className="btn btn-primary btn-sm btn-font-size-sm"
                       onClick={() => navcart(e)}
+                      style={{
+                        backgroundColor: "#F94C10",
+                        borderColor: "#F94C10",
+                      }}
                     >
                       Add To Cart
                     </button>
                   </div>
 
-                  {/* <p>Description: {e.description}</p> */}
-                  {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}
+                  <div
+                    class="modal fade"
+                    id="exampleModal"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div
+                      class="modal-dialog"
+                      style={{
+                        width: "200px",
+                        backgroundColor: "black",
+                        color: "#9D44C0",
+                        fontSize: "20px",
+                      }}
+                    >
+                      <div class="modal-content">
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                          style={{ marginLeft: "170px", height: "20px" }}
+                        ></button>
+
+                        <div class="modal-body" style={{ fontWeight: "bold" }}>
+                          Added To Cart
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>

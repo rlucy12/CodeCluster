@@ -30,7 +30,7 @@ const SingleProdPage = () => {
           <img
             src={productData.image}
             alt={productData.title}
-            style={{ height: 230, width: 230 }}
+            style={{ height: 430, width: 330 }}
           />
           <p>{productData.title}</p>
           <p>Price: ${productData.price}</p>
