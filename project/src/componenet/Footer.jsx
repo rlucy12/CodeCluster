@@ -3,7 +3,7 @@ const Footer = () => {
     return (
       <>
        
-        <div className="">
+        <div className="container my-5">
           {/* Footer */}
           <footer
             className="text-center text-lg-start text-white"

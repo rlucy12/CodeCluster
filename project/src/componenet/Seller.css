@@ -59,6 +59,26 @@
 
 }
 
+.image-container {
+    margin-left: 5%;
+    /* Adjust as needed */
+    margin-right: 5%;
+    /* Adjust as needed */
+    max-width: 100%;
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .image-container {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
 @media (max-width: 1024px) {
 
     .two,

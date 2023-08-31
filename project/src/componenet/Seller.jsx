@@ -39,13 +39,11 @@ const Seller = () => {
     
   return (
     <div>
-      <div style={{ marginLeft: 110, marginRight: 60 }}>
+      <div class="image-container">
         <img
           loading="eager"
-          height={490}
-          width="auto"
           src="https://ii1.pepperfry.com/assets/w23-sop-herosection-1280_1.jpg"
-          alt="image alt image"
+          alt="image alt text"
         />
       </div>
       <div className="one">
@@ -218,54 +216,18 @@ const Seller = () => {
                 value={cat}
                 onChange={(e) => catchange(e.target.value)}
               >
-                <option>
-                  
-                  Furniture
-                </option>
-                <option>
-                 
-                  Furnishings
-                </option>
-                <option>
-                  
-                  Mattresses
-                </option>
-                <option>
-                  
-                  Home Decor
-                </option>
-                <option>
-                 
-                  Lamps and Lighting
-                </option>
-                <option>
-                  
-                  Gift card
-                </option>
-                <option>
-                  
-                  Appliances
-                </option>
-                <option>
-                  
-                  Kitchen and Dining
-                </option>
-                <option>
-                  
-                  Deals
-                </option>
-                <option>
-                  
-                  Home Utility
-                </option>
-                <option>
-                 
-                  Modular Furniture
-                </option>
-                <option>
-                  
-                  Sofas and Seating
-                </option>
+                <option>Furniture</option>
+                <option>Furnishings</option>
+                <option>Mattresses</option>
+                <option>Home Decor</option>
+                <option>Lamps and Lighting</option>
+                <option>Gift card</option>
+                <option>Appliances</option>
+                <option>Kitchen and Dining</option>
+                <option>Deals</option>
+                <option>Home Utility</option>
+                <option>Modular Furniture</option>
+                <option>Sofas and Seating</option>
               </select>
               {/* <input type="file" onChange={handleChange} />
             <img src={file} /> */}
