@@ -1,5 +1,5 @@
 // import Ratio from "react-bootstrap/Ratio";
-import "./Seller.css";
+import '../componenet/Seller.css'
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 const Seller = () => {

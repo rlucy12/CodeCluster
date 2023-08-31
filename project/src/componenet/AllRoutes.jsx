@@ -19,6 +19,7 @@ import SingleProdPage from "./SingleProdPage";
 import Seller from "./seller";
 import Cart from "./Cart";
 import Wishlist from "./Wishlist";
+import Footer from "./Footer";
 // import Product from "../pages/Product";
 // import SingleProdPage from "./singleProdPage";
 const AllRoutes = () => {
@@ -49,6 +50,7 @@ const AllRoutes = () => {
       <Route path="/modular" element={<Modular />}></Route>
       <Route path="/product/:id" element={<SingleProdPage />} />
       <Route path="/posts/:id" element={<Cart />} />
+      <Route path="/footer" element={<Footer/>} />
     </Routes>
   );
 };

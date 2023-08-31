@@ -2,8 +2,8 @@ import "../componenet/Footer.css"
 const Footer = () => {
     return (
       <>
-        {/* Remove the container if you want to extend the Footer to full width. */}
-        <div className="container my-5">
+       
+        <div className="">
           {/* Footer */}
           <footer
             className="text-center text-lg-start text-white"
@@ -15,19 +15,7 @@ const Footer = () => {
               <section className="">
                 {/*Grid row*/}
                 <div className="row">
-                  {/*Grid column*/}
-                  {/* <div className="col-lg-4 col-md-6 mb-4 mb-md-0">
-                    <h5 className="text-uppercase">FOOTER CONTENT</h5>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Molestiae modi cum ipsam ad, illo possimus laborum ut
-                      reiciendis obcaecati. Ducimus, quas. Corrupti, pariatur
-                      eaque? Reiciendis assumenda iusto sapiente inventore
-                      animi?
-                    </p>
-                  </div> */}
-                  {/*Grid column*/}
-                  {/*Grid column*/}
+                 
                   <div className="col-lg-2 col-md-6 mb-4 mb-md-0">
                     <h5 className="text-uppercase">Corporate</h5>
                     <ul className="list-unstyled mb-0">
