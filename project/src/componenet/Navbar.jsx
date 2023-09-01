@@ -1,8 +1,6 @@
-
 import React from "react";
 import "./nav.css"; // Import your CSS file for styling
 import { useNavigate } from "react-router-dom";
-
 
 const NavigationBar = () => {
   const nav = useNavigate();
@@ -11,7 +9,12 @@ const NavigationBar = () => {
   // }
   return (
     <div className="navbar">
-      <input type="text" className="search-bar" placeholder="Search..." style={{height:"30px"}}/>
+      <input
+        type="text"
+        className="search-bar"
+        placeholder="Search..."
+        style={{ height: "30px" }}
+      />
       {/* <div className="logo">pepperfry</div> */}
       <a onClick={() => nav("/home")}>
         <img
@@ -85,40 +88,118 @@ const NavigationBar = () => {
           </li>
         </ul>
       </div>
-      <div className="subnavbar">
-        <ul className="subnav-links">
-          <li class="nav-item">
-            <a onClick={() => nav("/furniture")}>Furniture</a>
-          </li>
-          <li>
-            <a onClick={() => nav("/sofasAndSeatings")}>Sofas & Seating</a>
-          </li>
-          <li>
-            <a onClick={() => nav("/mattresses")}>Mattresses</a>
-          </li>
-          <li>
-            <a onClick={() => nav("/homeDecor")}>Home Decor</a>
-          </li>
-          <li>
-            <a onClick={() => nav("/furnishing")}>Furnishing</a>
-          </li>
-          <li>
-            <a onClick={() => nav("/KitchenandDining")}>Kitchen & Dining</a>
-          </li>
-          <li>
-            <a onClick={() => nav("/lampsandLighting")}>Lamps & Lighting</a>
-          </li>
-          <li>
-            <a onClick={() => nav("/homeUtility")}>Home Utility</a>
-          </li>
-          <li>
-            <a onClick={() => nav("/appliances")}>Appliances</a>
-          </li>
-          <li>
-            <a onClick={() => nav("/modular")}>Modular</a>
-          </li>
-        </ul>
-      </div>
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid" style={{marginLeft:"75px"}}>
+          <a class="navbar-brand" href="#" >
+            Papperfry
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item" style={{ marginLeft: "15px" }}>
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  onClick={() => nav("/furniture")}
+                >
+                  Furniture
+                </a>
+              </li>
+              <li className="nav-item" style={{ marginLeft: "15px" }}>
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  onClick={() => nav("/sofasAndSeatings")}
+                >
+                  Sofas & Seating
+                </a>
+              </li>
+              <li className="nav-item" style={{ marginLeft: "15px" }}>
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  onClick={() => nav("/mattresses")}
+                >
+                  Mattresses
+                </a>
+              </li>
+              <li className="nav-item" style={{ marginLeft: "15px" }}>
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  onClick={() => nav("/homeDecor")}
+                >
+                  Home Decor
+                </a>
+              </li>
+              <li className="nav-item" style={{ marginLeft: "15px" }}>
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  onClick={() => nav("/furnishing")}
+                >
+                  Furnishing
+                </a>
+              </li>
+              <li className="nav-item" style={{ marginLeft: "15px" }}>
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  onClick={() => nav("/KitchenandDining")}
+                >
+                  Kitchen & Dining
+                </a>
+              </li>
+              <li className="nav-item" style={{ marginLeft: "15px" }}>
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  onClick={() => nav("/lampsandLighting")}
+                >
+                  Lamps & Lighting
+                </a>
+              </li>
+              <li className="nav-item" style={{ marginLeft: "15px" }}>
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  onClick={() => nav("/homeUtility")}
+                >
+                  Home Utility
+                </a>
+              </li>
+              <li className="nav-item" style={{ marginLeft: "15px" }}>
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  onClick={() => nav("/appliances")}
+                >
+                  Appliances
+                </a>
+              </li>
+              <li className="nav-item" style={{ marginLeft: "15px", marginRight: "45px"}}>
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  onClick={() => nav("/modular")}
+                >
+                  Modular
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
   );
 };
