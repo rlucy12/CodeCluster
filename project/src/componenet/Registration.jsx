@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-
+import { useNavigate ,Link} from "react-router-dom";
+import '../componenet/contact.css'
 const Register = () => {
     const [id,idchange] = useState("");
     const [name, namechange] = useState("");
@@ -40,7 +40,9 @@ const Register = () => {
                   <div className="col-lg-6">
                     <div className="form-group">
                       <label>User Name</label>
+                      <br />
                       <input
+                      
                         type="text"
                         required
                         va
@@ -48,7 +50,7 @@ const Register = () => {
                         onChange={(e) => idchange(e.target.value)}
                       />
                       <br></br>
-                      <label>Name</label>{" "}
+                      <label>Name</label> <br />
                       <input
                         type="text"
                         required
@@ -57,7 +59,7 @@ const Register = () => {
                         onChange={(e) => namechange(e.target.value)}
                       />
                       <br></br>
-                      <label> Email </label>{" "}
+                      <label> Email </label> <br />
                       <input
                         type="email"
                         required
@@ -65,7 +67,7 @@ const Register = () => {
                         onChange={(e) => emailchange(e.target.value)}
                       />
                       <br></br>
-                      <label>Password</label>{" "}
+                      <label>Password</label> <br />
                       <input
                         type="password"
                         required
@@ -86,7 +88,15 @@ const Register = () => {
                 <button type="submit" className="btn btn-primary">
                   Sign Up
                 </button>
-                <a className="btn btn-danger">Back</a>
+                <Link className="btn btn-success" to={"/"}>
+                  Back
+                </Link>
+              </div>
+              <div style = {{marginTop:"20px", marginLeft:"30px", marginBottom:"20px"}}>
+                If Already have an account :<br></br>
+                <Link className="btn btn-success" to={"/login"} style={{marginLeft:"20px"}}>
+                  Login
+                </Link>
               </div>
             </div>
           </form>
