@@ -118,7 +118,7 @@ const Login = () => {
                 Login
               </button>{" "}
               |
-              <Link className="btn btn-success" to={"/register"}>
+              <Link className="btn btn-success" to={"/registration"}>
                 New User
               </Link>
             </div>

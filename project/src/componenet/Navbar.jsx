@@ -89,8 +89,8 @@ const NavigationBar = () => {
         </ul>
       </div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid" style={{marginLeft:"75px"}}>
-          <a class="navbar-brand" href="#" >
+        <div class="container-fluid" style={{ marginLeft: "75px" }}>
+          <a class="navbar-brand" href="#">
             Papperfry
           </a>
           <button
@@ -106,7 +106,7 @@ const NavigationBar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item" style={{ marginLeft: "15px" }}>
+              <li className="nav-item" style={{ marginLeft: "20px" }}>
                 <a
                   className="nav-link active"
                   aria-current="page"
@@ -115,7 +115,7 @@ const NavigationBar = () => {
                   Furniture
                 </a>
               </li>
-              <li className="nav-item" style={{ marginLeft: "15px" }}>
+              <li className="nav-item" style={{ marginLeft: "20px" }}>
                 <a
                   className="nav-link active"
                   aria-current="page"
@@ -124,7 +124,7 @@ const NavigationBar = () => {
                   Sofas & Seating
                 </a>
               </li>
-              <li className="nav-item" style={{ marginLeft: "15px" }}>
+              <li className="nav-item" style={{ marginLeft: "20px" }}>
                 <a
                   className="nav-link active"
                   aria-current="page"
@@ -133,7 +133,7 @@ const NavigationBar = () => {
                   Mattresses
                 </a>
               </li>
-              <li className="nav-item" style={{ marginLeft: "15px" }}>
+              <li className="nav-item" style={{ marginLeft: "20px" }}>
                 <a
                   className="nav-link active"
                   aria-current="page"
@@ -142,7 +142,7 @@ const NavigationBar = () => {
                   Home Decor
                 </a>
               </li>
-              <li className="nav-item" style={{ marginLeft: "15px" }}>
+              <li className="nav-item" style={{ marginLeft: "20px" }}>
                 <a
                   className="nav-link active"
                   aria-current="page"
@@ -151,7 +151,7 @@ const NavigationBar = () => {
                   Furnishing
                 </a>
               </li>
-              <li className="nav-item" style={{ marginLeft: "15px" }}>
+              <li className="nav-item" style={{ marginLeft: "20px" }}>
                 <a
                   className="nav-link active"
                   aria-current="page"
@@ -160,7 +160,7 @@ const NavigationBar = () => {
                   Kitchen & Dining
                 </a>
               </li>
-              <li className="nav-item" style={{ marginLeft: "15px" }}>
+              <li className="nav-item" style={{ marginLeft: "20px" }}>
                 <a
                   className="nav-link active"
                   aria-current="page"
@@ -169,7 +169,7 @@ const NavigationBar = () => {
                   Lamps & Lighting
                 </a>
               </li>
-              <li className="nav-item" style={{ marginLeft: "15px" }}>
+              <li className="nav-item" style={{ marginLeft: "20px" }}>
                 <a
                   className="nav-link active"
                   aria-current="page"
@@ -178,7 +178,7 @@ const NavigationBar = () => {
                   Home Utility
                 </a>
               </li>
-              <li className="nav-item" style={{ marginLeft: "15px" }}>
+              <li className="nav-item" style={{ marginLeft: "20px" }}>
                 <a
                   className="nav-link active"
                   aria-current="page"
@@ -187,7 +187,10 @@ const NavigationBar = () => {
                   Appliances
                 </a>
               </li>
-              <li className="nav-item" style={{ marginLeft: "15px", marginRight: "45px"}}>
+              <li
+                className="nav-item"
+                style={{ marginLeft: "20px", marginRight: "45px" }}
+              >
                 <a
                   className="nav-link active"
                   aria-current="page"
